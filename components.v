@@ -15,14 +15,14 @@ module sign_extend(in, ext);
 	output [15:0] ext;
 	
 	// TODO: implement logic
-	assign ext = {7{in[8]}, {in}};
+	assign ext = {{7{in[8]}}, {in}};
 	
 endmodule
 
 
 
 module tick_FSM(rst, clk, enable, tick);
-	/* 
+	 /*
 	 * This module implements a tick FSM that will be used to
 	 * control the actions of the control unit
 	 */
@@ -40,11 +40,12 @@ module tick_FSM(rst, clk, enable, tick);
 	 always @(posedge clk) begin
 		 if (rst) tick <= t1;
 		 
-		 else begin
+		 else if (enable) begin
 		 
 			 tick <= {tick[2:0], tick[3]};
 		 end
-	 end S
+		 
+	 end
 			 
 endmodule
 
@@ -63,7 +64,7 @@ endmodule
 module ALU (input_a, input_b, alu_op, result);
 	/* 
 	 * This module implements the arithmetic logic unit of the processor.
-	 */
+	  */
 	// TODO: declare inputs and outputs
 
     input [15:0] input_a;
@@ -159,7 +160,7 @@ module register_n(data_in, r_in, clk, Q, rst);
 
 	/* 
 	 * This module implements registers that will be used in the processor.
-	 */
+	  */
 	// TODO: Declare inputs, outputs, and parameter:
 	
 	// TODO: Implement register logic:
