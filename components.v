@@ -59,37 +59,92 @@ module multiplexer(SignExtDin, R0, R1, R2, R3, R4, R5, R6, R7, G, sel, Bus);
 
 endmodule
 
+
 module ALU (input_a, input_b, alu_op, result);
 	/* 
 	 * This module implements the arithmetic logic unit of the processor.
 	 */
 	// TODO: declare inputs and outputs
-	input [15:0] input_a;
-	input [15:0] input_b;
-	input [2:0] alu_op;
-	output reg [15:0] result;	
+
+    input [15:0] input_a;
+    input [15:0] input_b;
+    input [2:0] alu_op;
+    output reg [15:0] result;
 
 	// TODO: Implement ALU Logic:
-	parameter add = 3'b001, sub = 3'b010, mul = 3'b000, ss = 3'b011;   
-	always@(alu_op) begin
-		 case (alu_op) 
-		 
-			 (add):
-				 result = input_a + input_b;
-			 (sub):
-				 result = input_a - input_b;
-			 (mul):
-				 result = input_a * input_b;
-			 (ss):
-				 if (input_a[15]) begin
-					 s = $signed(input_a)*-1
-					 for(i=0, i<16, i=i+1) begin
-						 input_b[i<s] = 0;
-						 in
-			  
-		 
-endmodule
+    parameter add = 3'b001,
+              sub = 3'b010,
+              mul = 3'b000,
+              ss  = 3'b011;
 
+    reg [17:0] s;
+    reg [3:0] ve;
+    integer i;
+
+    always @(*) begin
+
+        case (alu_op)
+
+            add:
+                result = input_a + input_b;
+
+            sub:
+                result = input_a - input_b;
+
+            mul:
+                result = input_a * input_b;
+
+            ss: begin
+
+                // Negative -> shift right
+                if (input_a[15]) begin
+
+                    s = $signed(input_a) * -1;
+
+                    if (s < 16) begin
+                        ve = 15 - s;
+
+                        for (i=0; i<16; i=i+1) begin
+                            if (i > ve)
+                                result[i] = 0;
+                            else
+                                result[i] = input_b[i+s];
+                        end
+
+                    end
+                    else
+                        result = 16'd0;
+
+                end
+
+                // Positive -> shift left
+                else begin
+
+                    s = $signed(input_a);
+
+                    if (s < 16) begin
+
+                        for (i=0; i<16; i=i+1) begin
+                            if (i < s)
+                                result[i] = 0;
+                            else
+                                result[i] = input_b[i-s];
+                        end
+
+                    end
+                    else
+                        result = 16'd0;
+
+                end
+            end
+
+            default:
+                result = 16'd0;
+
+        endcase
+    end
+
+endmodule
 
 
 module register_n(data_in, r_in, clk, Q, rst);
