@@ -41,7 +41,7 @@ module tick_FSM(rst, clk, enable, tick);
 		 if (rst) tick <= t1;
 		 
 		 else if (enable) begin
-		 
+			 // takes the MSB and moves it to the LSB
 			 tick <= {tick[2:0], tick[3]};
 		 end
 		 
@@ -55,7 +55,37 @@ module multiplexer(SignExtDin, R0, R1, R2, R3, R4, R5, R6, R7, G, sel, Bus);
 	 */
 	// TODO: Declare inputs and outputs
 	
-	// TODO: implement logic
+	
+	input [15:0] R0, R1, R2, R3, R4, R5, R6, R7, G, SignExtDin;
+	input [3:0] sel;
+	output reg [15:0] Bus;
+	
+		
+	
+	always @(*) begin
+		
+		
+		case(select) 
+			4'b0000: Bus = R0; 
+			4'b0001:	Bus = R1;
+			4'b0010: Bus = R2;
+			4'b0011: Bus = R3;
+			4'b0100: Bus = R4;
+			4'b0101: Bus = R5;
+			4'b0110: Bus = R6;
+			4'b0111: Bus = R7;
+			4'b1000: Bus = G;
+			4'b1001: Bus = SignExtDin;
+			
+			
+			default: Bus = 16'b0;
+			
+
+		endcase
+	
+	
+	end
+
 
 
 endmodule
@@ -99,14 +129,20 @@ module ALU (input_a, input_b, alu_op, result);
 
                 // Negative -> shift right
                 if (input_a[15]) begin
-
+							/* check if the sign is 1 (negative if so)
+							Perform twos complement to get the postive number 
+							
+							Get the legal index bounds for shifting (15 - s)
+							*/
                     s = $signed(input_a) * -1;
 
                     if (s < 16) begin
                         ve = 15 - s;
-
+								
+								//Go Through all bits and move the current bit to the current bit + shift (e.g. bit 1 moves to bit 1+shift = 1+4 = bit 5
                         for (i=0; i<16; i=i+1) begin
                             if (i > ve)
+										// if outside the bounds, pad with 0 for the remainding bits
                                 result[i] = 0;
                             else
                                 result[i] = input_b[i+s];
@@ -149,6 +185,7 @@ endmodule
 
 
 module register_n(data_in, r_in, clk, Q, rst);
+	
 
 
 	// To set parameter N during instantiation, you can use:
@@ -157,12 +194,29 @@ module register_n(data_in, r_in, clk, Q, rst);
 	// and "..." is your usual input/output signals
 
 	parameter N = 16;
-
-	/* 
-	 * This module implements registers that will be used in the processor.
-	  */
-	// TODO: Declare inputs, outputs, and parameter:
 	
-	// TODO: Implement register logic:
+	//making the input and output registers flexible by bits N
+	input [N-1:0] data_in;
+	input r_in;
+	input rst;
+	input clk;
+	output reg [N-1:0] Q;
+
+	
+	always @(posedge clk) begin
+	
+		if (rst) begin
+			//replicate 1 bit by size N
+			Q <= {N{1'b0}};
+			end
+		else if (r_in) begin
+			
+			Q <= data_in;
+		end
+			
+			
+	end
+	
+
 endmodule
 
