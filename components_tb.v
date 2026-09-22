@@ -24,6 +24,12 @@ module components_tb;
 	parameter t1 =1, t2=2, t3=4, t4=8;
 	integer err_tick;
 	
+	//alu
+	reg [15:0] in_a, in_b;
+	reg [2:0] alu;
+	wire [15:0] alu_out;
+	
+	
 	
 	sign_extend s1(
 		 .in(in),
@@ -37,8 +43,7 @@ module components_tb;
 		 .tick(tick)
 		 
 	);
-	
-	/*
+		/*
 	AI paragraph that justifies why a 4 bit register sufficiently tests the tick_FSM
 	module. (For when we write the project)
 	
@@ -49,6 +54,15 @@ from 0000 to 1111 tests all 256 possible enable/reset sequences over this window
 resulting in 1024 individual clock-cycle checks.
 
 	*/
+	
+	ALU a1(
+	.input_a(in_a),
+	.input_b(in_b),	
+	.alu_op(alu),
+	.result(alu_out)
+	);
+	
+
 		 
 	
 
@@ -150,6 +164,46 @@ resulting in 1024 individual clock-cycle checks.
 		
 		
 	end 
+	
+	
+	//alu
+	
+	initial begin
+		 in_a = 16'd0;
+		 in_b = 16'd0;
+		 alu = 3'd0;
+		 
+		 for(i_alu = 0; i_alu<512; i_alu = i_alu+1) begin
+		 
+			 in_a = {{7{i_alu[8]}}, {i_alu}};
+			 
+	 		 for(j_alu = 0; j_alu<512; j_alu = j_alu+1) begin
+			 
+			 in_b = {{7{j_alu[8]}}, {j_alu}};
+			 
+		 	 for(k_alu = 0; k_alu<16; k_alu = k_alu+1) begin
+			 
+				 alu = k_alu;
+				 
+				 case(alu) begin 
+				 
+					 3'd0: alu_out = in_a *in_b;
+					 
+					 3'b001: alu_out = in_a + in_b;
+					 
+					 3'b010: alu_out = in_a - in_b;
+					 
+					 3'b011: 
+								if(in[15]) alu_out = in_b >> $signed(in_a);
+								else alu_out = in_b << $signed(in_a);
+								
+					 default: 
+				 endcase
+				 
+					 
+						   
+					 
+					 
 	
 	
 
