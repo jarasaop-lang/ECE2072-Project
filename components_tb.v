@@ -42,10 +42,16 @@ module components_tb;
 	wire [NIR-1:0] Q_9;
 	
 	//alu
-	reg [15:0] in_a, in_b;
-	reg [2:0] alu;
+	reg [20:0] alu;
 	wire [15:0] alu_out;
+	reg [15:0] alu_exp;
+	reg [15:0] in_a, in_b;
+	reg [2:0] alu_c;
+	integer alu_err;
 	
+	//stop flag
+	reg [4:0] st;
+	parameter sign_stop = 0, tick_stop = 1, alu_stop = 2, multi_stop = 3, regi_stop = 4; 
 	
 	
 	sign_extend s1(
@@ -113,7 +119,7 @@ resulting in 1024 individual clock-cycle checks.
 	ALU a1(
 	.input_a(in_a),
 	.input_b(in_b),	
-	.alu_op(alu),
+	.alu_op(alu_c),
 	.result(alu_out)
 	);
 	
@@ -132,6 +138,7 @@ resulting in 1024 individual clock-cycle checks.
 		 in = 0;
 		 cnt_sign =0;		 
 		 err_sign = 0;
+		 st[sign_stop] = 0;
 
 		 for (cnt_sign = 0; cnt_sign < 512; cnt_sign = cnt_sign + 1) begin
 			 #9;
@@ -148,10 +155,14 @@ resulting in 1024 individual clock-cycle checks.
 			 in = in + 1;
 		 end
 
-		 if (err_sign == 0)
+		 if (err_sign == 0) begin
 			  $display("PASS Sign Extender | 512/512 input combinations passed");
-		 else
+			  st[sign_stop] = 1;
+		 end
+		 else begin
 			 $display("FAIL Sign Extender | %0d errors out of 512 tests", err_sign);
+			 st[sign_stop] = 1;
+		 end 
 
 	 end
 
@@ -163,6 +174,7 @@ resulting in 1024 individual clock-cycle checks.
 		 val_en = 4'd0;
 		 val_rst = 4'd0;
 		 err_tick = 0;
+		 st[tick_stop] = 0;
 		 
 		 for(i=0; i< 16; i = i+1) begin
 			 val_en = i;
@@ -210,15 +222,22 @@ resulting in 1024 individual clock-cycle checks.
 					end
 				end 
 			end
+		end
 			if(err_tick == 0 ) begin
 				$display("success");
+				st[tick_stop] = 1;
 			end
-			else $display("Fail had %0d errors", err_tick);			
+			else begin
+				 $display("Fail had %0d errors", err_tick);		
+				 st[tick_stop] = 1;
+			end 
 
 		end 
 		
+	
 		
-	end 
+		
+	
 	
 	
 	//alu
@@ -226,34 +245,50 @@ resulting in 1024 individual clock-cycle checks.
 	initial begin
 		 in_a = 16'd0;
 		 in_b = 16'd0;
-		 alu = 3'd0;
+		 alu_c = 3'd0;
+		 alu_err = 0;
+		 st[alu_stop] = 0;
 		 
-		 for(i_alu = 0; i_alu<512; i_alu = i_alu+1) begin
+		 for(alu = 0; alu<2097152; alu = alu+1) begin
 		 
-			 in_a = {{7{i_alu[8]}}, {i_alu}};
+			 in_a = {{7{alu[8]}}, {alu[8:0]}};
+			 in_b = {{7{alu[17]}}, {alu[17:9]}};
+			 alu_c =  alu[20:18];
 			 
-	 		 for(j_alu = 0; j_alu<512; j_alu = j_alu+1) begin
-			 
-			 in_b = {{7{j_alu[8]}}, {j_alu}};
-			 
-		 	 for(k_alu = 0; k_alu<16; k_alu = k_alu+1) begin
-			 
-				 alu = k_alu;
 				 
-				 case(alu) begin 
+				 case(alu_c) 
 				 
-					 3'd0: alu_out = in_a *in_b;
+					 3'd0: alu_exp = in_a *in_b;
 					 
-					 3'b001: alu_out = in_a + in_b;
+					 3'b001: alu_exp = in_a + in_b;
 					 
-					 3'b010: alu_out = in_a - in_b;
+					 3'b010: alu_exp = in_a - in_b;
 					 
 					 3'b011: 
-								if(in[15]) alu_out = in_b >> $signed(in_a);
-								else alu_out = in_b << $signed(in_a);
+								if(in_a[15]) alu_exp = in_b >> $signed(in_a)*-1;
+								else alu_exp = in_b << $signed(in_a);
 								
-					 default: 
+					 default: alu_exp = 16'b0;
 				 endcase
+			 #9;
+			 
+			 if (alu_exp != alu_out) alu_err = alu_err + 1;
+			 
+			 else if (alu == 2097151 & alu_err == 0) begin 
+				 $display("success");
+				 st[alu_stop] = 1;
+			 end 
+			 else if (alu == 2097151 & alu_err != 0) begin
+				 $display("fail");
+				 st[alu_stop] = 1;
+			 end
+			 
+	  end
+	end 
+			
+			
+			 
+			
 				 
 					 
 						   
@@ -276,6 +311,7 @@ resulting in 1024 individual clock-cycle checks.
         sel = 4'b0000;
 		  mult_errors = 32'b0;
 		  mult_pass = 32'b0;
+		  st[multi_stop] = 0;
 
 		  
 		  //initialising the multiplexer values
@@ -316,10 +352,12 @@ resulting in 1024 individual clock-cycle checks.
 			
 				if (mult_errors == 0) begin
 					$display("Success. No errors were detected in the Multiplexer Component");
+					st[multi_stop] = 1;
 				end
 				
 				else begin
 					$display("Failure. Multiplexer Testbench Statistics are: Errors = %d, Passes = %d", mult_errors, mult_pass);
+					st[multi_stop] = 1;
 				end
 		   end
 		
@@ -345,6 +383,7 @@ resulting in 1024 individual clock-cycle checks.
 		  expected_9 = 9'b0;
 		  data_in_16 = 16'b0;
 		  data_in_9 = 9'b0;
+		  st[regi_stop] = 0;
 		  
 		  
 		
@@ -408,13 +447,27 @@ resulting in 1024 individual clock-cycle checks.
 		  
 				if (r9_error == 0 & r16_error == 0) begin
 					$display("Success. No errors were detected in the Register Component");
+					st[regi_stop] = 1;
 				end
 				
 				else begin
 					$display("Failure. Register Testbench Statistics are: Errors_R16 = %d, Passes_R16 = %d, Errors_R9 = %d, Passes_R9 = %d", r16_error, r16_pass, r9_error, r9_pass);
+					st[regi_stop] = 1 ;
 				end		  
-		  $stop
+		 
     end
+	   
+	 
+	 initial begin
+		 
+
+		 wait(st == 5'b11111);
+
+		 $display("All tests finished");
+		 $stop;
+	 end
+
+
 		
 		
 

@@ -65,7 +65,7 @@ module multiplexer(SignExtDin, R0, R1, R2, R3, R4, R5, R6, R7, G, sel, Bus);
 	always @(*) begin
 		
 		
-		case(select) 
+		case(sel) 
 			4'b0000: Bus = R0; 
 			4'b0001:	Bus = R1;
 			4'b0010: Bus = R2;

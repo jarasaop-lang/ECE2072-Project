@@ -1,0 +1,26 @@
+BCD(
+	 input [3:0] tk;
+	 output [6:0] tkhex ;
+	 );
+	 
+	 parameter t1 = 4'b0001, t2 = 4'b0010, t3 = 4'b0100, t4, 4'b1000;
+	 
+	 reg a, b, c, d, e, f, g;
+	 
+
+	 
+	 
+	 always @(*) begin
+		 if (tk[t1]) {a, b, c, d, e, f, g} = 7'b0110000;
+		 else if (tk[t2]) {a, b, c, d, e, f, g} = 7'b1101101;
+		 else if (tk[t3]) {a, b, c, d, e, f, g} = 7'b1111001;
+		 else if (tk[t4]) {a, b, c, d, e, f, g} = 7'b0110011;	
+		 else {a, b, c, d, e, f, g} = 7'd0;
+	 end 
+	 always @(*) begin
+		 tkhex = {g, f, e, d, c, b, a};
+	 end 
+	 
+endmodule 
+		 
+	 
