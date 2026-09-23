@@ -12,11 +12,13 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
     // TODO: Declare inputs and outputs:
 	 
 	 
-	input [15:0] bus;
+	
 	input clk, rst;
 	input [8:0] din;
 	
+	
 	output [15:0] R0, R1, R2, R3, R4, R5, R6, R7;	
+	output [15:0] bus;
 
     // TODO: declare wires:
     
@@ -36,9 +38,11 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 	 wire [2:0] opcode, RX, RY;
 	 
 	 assign opcode = IR_out[8:6];
-	 assign opcode = IR_out[5:3];
-	 assign opcode = IR_out[2:0];
+	 assign RX = IR_out[5:3];
+	 assign RY = IR_out[2:0];
 	 parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111;
+	 
+	 localparam SEL_G=4'b1000, SEL_DIN=4'b1001;
 	 
 
    // TODO: instantiate registers:
@@ -48,25 +52,25 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 		.data_in(bus), .r_in(Rin[0]), .clk(clk), .Q(R0), .rst(rst)
 	);
 	
-	register_n R0 (
+	register_n R1_reg (
 		.data_in(bus), .r_in(Rin[1]), .clk(clk), .Q(R1), .rst(rst)
 	);
-	register_n R0 (
+	register_n R2_reg (
 		.data_in(bus), .r_in(Rin[2]), .clk(clk), .Q(R2), .rst(rst)
 	);
-	register_n R0 (
+	register_n R3_reg (
 		.data_in(bus), .r_in(Rin[3]), .clk(clk), .Q(R3), .rst(rst)
 	);
-	register_n R0 (
+	register_n R4_reg (
 		.data_in(bus), .r_in(Rin[4]), .clk(clk), .Q(R4), .rst(rst)
 	);
-	register_n R0 (
+	register_n R5_reg (
 		.data_in(bus), .r_in(Rin[5]), .clk(clk), .Q(R5), .rst(rst)
 	);
-	register_n R0 (
+	register_n R6_reg (
 		.data_in(bus), .r_in(Rin[6]), .clk(clk), .Q(R6), .rst(rst)
 	);
-	register_n R0 (
+	register_n R7_reg (
 		.data_in(bus), .r_in(Rin[7]), .clk(clk), .Q(R7), .rst(rst)
 	);
 	
@@ -138,8 +142,8 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 		  Gin = 1'b0;
 		  Rin = 8'b0;
 		  IRin = 1'b0;
-		  select 4'bxxxx;
-		  ALUop = 4'bxxxx;
+		  select = 4'bxxxx;
+		  ALUop = 3'bxxx;
 		  
 
 
@@ -152,7 +156,7 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
             
             4'b0010:
                 begin
-					 IRin = 0
+
 					 
 					 case(opcode)
 						ADD, SUB: begin
@@ -161,14 +165,17 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 							end
 							
 						MOVI: begin
-							select = ;
-							RX = 
+							select = SEL_DIN;
+							Rin[RX] = 1'b1;
 							end
 						ADDI: begin
 							Ain = 1;
-							select = SignExtDin;
+							select = SEL_DIN;
 						end
 						
+						default: ;
+						
+					 endcase
 						
 					 
                     // TODO
@@ -176,12 +183,44 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
             
             4'b0100:
                 begin
-                    // TODO
+					 
+                case(opcode)
+						ADD: begin
+							Gin = 1;
+							select = RY;
+							ALUop = 3'b001;
+							end
+						SUB: begin
+							Gin = 1;
+							select = RY;
+							ALUop = 3'b010;
+							end
+						ADDI: begin
+							Gin=1;
+							select = RX;
+							ALUop = 3'b001;
+						end
+						
+					 default: ;
+						
+					 endcase
                 end
             
             4'b1000:
                 begin
-                    // TODO
+                
+					 case(opcode)
+						ADD, SUB, ADDI: begin
+							select = SEL_G;
+							Rin[RX] = 1'b1;
+							end
+
+					   default: ;
+						
+					 endcase
+					 
+					 
+					 
                 end
             
             default:
