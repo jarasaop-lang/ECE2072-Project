@@ -7,8 +7,6 @@ BCD(
 	 
 	 reg a, b, c, d, e, f, g;
 	 
-
-	 
 	 
 	 always @(*) begin
 		 if (tk == t1) {a, b, c, d, e, f, g} = 7'b0110000;

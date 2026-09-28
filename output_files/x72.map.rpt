@@ -1,5 +1,5 @@
-Analysis & Elaboration report for x72
-Wed Sep 16 22:41:10 2026
+Analysis & Synthesis report for x72
+Mon Sep 28 13:07:57 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -7,10 +7,10 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -34,12 +34,12 @@ refer to the applicable agreement for further details.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Wed Sep 16 22:41:10 2026           ;
+; Analysis & Synthesis Status        ; Failed - Mon Sep 28 13:07:57 2026           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; x72                                         ;
-; Top-level Entity Name              ; components                                  ;
+; Top-level Entity Name              ; components_tb                               ;
 ; Family                             ; MAX 10                                      ;
 ; Total logic elements               ; N/A until Partition Merge                   ;
 ;     Total combinational functions  ; N/A until Partition Merge                   ;
@@ -55,29 +55,13 @@ refer to the applicable agreement for further details.
 +------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
-
-
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; 10M50DAF484C7G     ;                    ;
-; Top-level entity name                                            ; components         ; x72                ;
+; Top-level entity name                                            ; components_tb      ; x72                ;
 ; Family name                                                      ; MAX 10             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -157,29 +141,59 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Sep 16 22:40:59 2026
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off x72 -c x72 --analysis_and_elaboration
+    Info: Processing started: Mon Sep 28 13:07:45 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off x72 -c x72
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Error (10170): Verilog HDL syntax error at proc_tb.v(9) near text: ".";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_tb.v Line: 9
+Info (12021): Found 0 design units, including 0 entities, in source file proc_tb.v
+Error (10170): Verilog HDL syntax error at proc_extension_tb.v(9) near text: ".";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v Line: 9
+Info (12021): Found 0 design units, including 0 entities, in source file proc_extension_tb.v
+Info (12021): Found 0 design units, including 0 entities, in source file proc_extension.v
+Error (10170): Verilog HDL syntax error at simpleproc_toplvl.v(1) near text: "(";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v Line: 1
+Error (10839): Verilog HDL error at simpleproc_toplvl.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file simpleproc_toplvl.v
+Error (10170): Verilog HDL syntax error at BCD_tickfsm.v(1) near text: "(";  expecting ".", or an identifier. Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v Line: 1
+Error (10839): Verilog HDL error at BCD_tickfsm.v(1): declaring global objects is a SystemVerilog feature File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file bcd_tickfsm.v
+Error (10149): Verilog HDL Declaration error at proc.v(53): identifier "R0" is already declared in the present scope File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 53
+Error (10112): Ignored design unit "simple_proc" at proc.v(8) due to previous errors File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 8
+Info (12021): Found 0 design units, including 0 entities, in source file proc.v
+Warning (10090): Verilog HDL syntax warning at components_tb.v(107): extra block comment delimiter characters /* within block comment File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v Line: 107
 Info (12021): Found 1 design units, including 1 entities, in source file components_tb.v
-    Info (12023): Found entity 1: components_tb File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v Line: 10
-Warning (10090): Verilog HDL syntax warning at components.v(54): extra block comment delimiter characters /* within block comment File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 54
-Warning (10090): Verilog HDL syntax warning at components.v(66): extra block comment delimiter characters /* within block comment File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 66
-Warning (10090): Verilog HDL syntax warning at components.v(162): extra block comment delimiter characters /* within block comment File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 162
-Info (12021): Found 2 design units, including 2 entities, in source file components.v
-    Info (12023): Found entity 1: sign_extend File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 9
-    Info (12023): Found entity 2: tick_FSM File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 24
-Error (12007): Top-level design entity "components" is undefined
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 1 error, 4 warnings
-    Error: Peak virtual memory: 4715 megabytes
-    Error: Processing ended: Wed Sep 16 22:41:10 2026
-    Error: Elapsed time: 00:00:11
-    Error: Total CPU time (on all processors): 00:00:23
+    Info (12023): Found entity 1: components_tb File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v Line: 10
+Info (12021): Found 5 design units, including 5 entities, in source file components.v
+    Info (12023): Found entity 1: sign_extend File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 9
+    Info (12023): Found entity 2: tick_FSM File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 24
+    Info (12023): Found entity 3: multiplexer File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 52
+    Info (12023): Found entity 4: ALU File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 94
+    Info (12023): Found entity 5: register_n File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 187
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 8 errors, 2 warnings
+    Error: Peak virtual memory: 4705 megabytes
+    Error: Processing ended: Mon Sep 28 13:07:57 2026
+    Error: Elapsed time: 00:00:12
+    Error: Total CPU time (on all processors): 00:00:25
 
 
