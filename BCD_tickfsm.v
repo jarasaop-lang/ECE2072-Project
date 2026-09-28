@@ -1,9 +1,9 @@
-BCD(
-	 input [3:0] tk;
-	 output [6:0] tkhex ;
+module BCD_tickfsm(
+	 input [3:0] tk,
+	 output reg [6:0] tkhex 
 	 );
 	 
-	 parameter t1 = 4'b0001, t2 = 4'b0010, t3 = 4'b0100, t4, 4'b1000;
+	 parameter t1 = 4'b0001, t2 = 4'b0010, t3 = 4'b0100, t4 = 4'b1000;
 	 
 	 reg a, b, c, d, e, f, g;
 	 

@@ -48,7 +48,7 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, tick);
    // TODO: instantiate registers:
 
 	 
-	register_n R0 (
+	register_n R0_reg (
 		.data_in(bus), .r_in(Rin[0]), .clk(clk), .Q(R0), .rst(rst)
 	);
 	

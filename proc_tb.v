@@ -6,7 +6,7 @@ This file contains a Verilog test bench to test the correctness of the processor
 Please enter your student ID:
 
 */
-module proc_tb.v;
+module proc_tb;
     // TODO: Implement the logic of your testbench here
 	 
 	 //instantiate inputs and outputs of processor --> array with the 4 required op codes, and a 6 bit array to increment by 1 for required values

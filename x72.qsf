@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
-set_global_assignment -name TOP_LEVEL_ENTITY components_tb
+set_global_assignment -name TOP_LEVEL_ENTITY simple_proc_top
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:41:10  SEPTEMBER 09, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
@@ -247,6 +247,13 @@ set_location_assignment PIN_Y3 -to GPIO[33]
 set_location_assignment PIN_AB2 -to GPIO[34]
 set_location_assignment PIN_AA2 -to GPIO[35]
 set_global_assignment -name VERILOG_FILE BCD_tickfsm.v
+set_global_assignment -name VERILOG_FILE proc.v
+set_global_assignment -name VERILOG_FILE components_tb.v
+set_global_assignment -name VERILOG_FILE components.v
+set_global_assignment -name QIP_FILE display_divide.qip
+set_global_assignment -name VERILOG_FILE display.v
+set_global_assignment -name VERILOG_FILE BCD.v
+set_global_assignment -name VERILOG_FILE simple_proc_top.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
