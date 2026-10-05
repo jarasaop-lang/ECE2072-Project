@@ -24,7 +24,7 @@ module simple_proc_top(
 	 );
 	 
 	 assign LEDR = bus[9:0];
-	 assign HEX5 = hex5_inversion;
+	 assign HEX5 = ~hex5_inversion;
 	 
 endmodule 
 		 

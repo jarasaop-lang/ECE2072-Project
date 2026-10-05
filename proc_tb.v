@@ -181,7 +181,7 @@ module proc_tb;
 		integer edge_iterator;
 		
 		begin
-			accept_pass_message = 1;
+			accept_pass_messages = 1;
 			// directed edge cases
 			
 			//testing that the boundaries are 16 bits
@@ -222,7 +222,7 @@ module proc_tb;
 			end
 			
 			//turning off pass messaging so we can validate failed attempts better
-			accept_pass_message = 0;
+			accept_pass_messages = 0;
 		end
 	
 	
@@ -255,7 +255,7 @@ module proc_tb;
 	RX = 3'd0;
 	RY = 3'd0;
 	immediate = 9'd0;
-	accept_pass_message = 0;
+	accept_pass_messages = 0;
 	
 	
 	//resetting the simple processor
@@ -301,6 +301,7 @@ module proc_tb;
 		$display("Failure. Simple Processor Statistics are: Errors = %d, Passes = %d", fail_count, pass_count);
 	end	
 	
-	$stop
+	$stop;
+	end
 
 endmodule

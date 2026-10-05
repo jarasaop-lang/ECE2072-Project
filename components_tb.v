@@ -103,7 +103,7 @@ module components_tb;
 	
 	
 	
-	/*
+	
 		/*
 	AI paragraph that justifies why a 4 bit register sufficiently tests the tick_FSM
 	module. (For when we write the project)

@@ -9,26 +9,24 @@ SW[6] => SW[6].IN1
 SW[7] => SW[7].IN1
 SW[8] => SW[8].IN1
 KEY[0] => _.IN1
-KEY[0] => _.IN1
 KEY[1] => _.IN1
-KEY[1] => _.IN1
-LEDR[0] <= simple_proc:p1.bus
-LEDR[1] <= simple_proc:p1.bus
-LEDR[2] <= simple_proc:p1.bus
-LEDR[3] <= simple_proc:p1.bus
-LEDR[4] <= simple_proc:p1.bus
-LEDR[5] <= simple_proc:p1.bus
-LEDR[6] <= simple_proc:p1.bus
-LEDR[7] <= simple_proc:p1.bus
-LEDR[8] <= simple_proc:p1.bus
-LEDR[9] <= simple_proc:p1.bus
-HEX5[0] <= BCD_tickfsm:b1.tkhex
-HEX5[1] <= BCD_tickfsm:b1.tkhex
-HEX5[2] <= BCD_tickfsm:b1.tkhex
-HEX5[3] <= BCD_tickfsm:b1.tkhex
-HEX5[4] <= BCD_tickfsm:b1.tkhex
-HEX5[5] <= BCD_tickfsm:b1.tkhex
-HEX5[6] <= <VCC>
+LEDR[0] << simple_proc:p1.bus
+LEDR[1] << simple_proc:p1.bus
+LEDR[2] << simple_proc:p1.bus
+LEDR[3] << simple_proc:p1.bus
+LEDR[4] << simple_proc:p1.bus
+LEDR[5] << simple_proc:p1.bus
+LEDR[6] << simple_proc:p1.bus
+LEDR[7] << simple_proc:p1.bus
+LEDR[8] << simple_proc:p1.bus
+LEDR[9] << simple_proc:p1.bus
+HEX5[0] << BCD_tickfsm:b1.tkhex
+HEX5[1] << BCD_tickfsm:b1.tkhex
+HEX5[2] << BCD_tickfsm:b1.tkhex
+HEX5[3] << BCD_tickfsm:b1.tkhex
+HEX5[4] << BCD_tickfsm:b1.tkhex
+HEX5[5] << BCD_tickfsm:b1.tkhex
+HEX5[6] << BCD_tickfsm:b1.tkhex
 
 
 |simple_proc_top|simple_proc:p1
@@ -187,6 +185,10 @@ R7[12] <= R7[12].DB_MAX_OUTPUT_PORT_TYPE
 R7[13] <= R7[13].DB_MAX_OUTPUT_PORT_TYPE
 R7[14] <= R7[14].DB_MAX_OUTPUT_PORT_TYPE
 R7[15] <= R7[15].DB_MAX_OUTPUT_PORT_TYPE
+tick[0] <= tick_FSM:tick1.tick
+tick[1] <= tick_FSM:tick1.tick
+tick[2] <= tick_FSM:tick1.tick
+tick[3] <= tick_FSM:tick1.tick
 
 
 |simple_proc_top|simple_proc:p1|register_n:R0_reg
@@ -2649,25 +2651,6 @@ result[15] <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |simple_proc_top|simple_proc:p1|tick_FSM:tick1
-rst => tick.OUTPUTSELECT
-rst => tick.OUTPUTSELECT
-rst => tick.OUTPUTSELECT
-rst => tick.OUTPUTSELECT
-clk => tick[0]~reg0.CLK
-clk => tick[1]~reg0.CLK
-clk => tick[2]~reg0.CLK
-clk => tick[3]~reg0.CLK
-enable => tick.OUTPUTSELECT
-enable => tick.OUTPUTSELECT
-enable => tick.OUTPUTSELECT
-enable => tick.OUTPUTSELECT
-tick[0] <= tick[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-tick[1] <= tick[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-tick[2] <= tick[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-tick[3] <= tick[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|simple_proc_top|tick_FSM:t1
 rst => tick.OUTPUTSELECT
 rst => tick.OUTPUTSELECT
 rst => tick.OUTPUTSELECT
