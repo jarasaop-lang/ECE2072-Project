@@ -44,6 +44,8 @@ module proc_tb;
 	integer seed; 
 	integer pass_count, fail_count;
 	integer iterator;
+	integer accept_pass_messages;
+	
 	
 	
 	
@@ -64,7 +66,7 @@ module proc_tb;
 				ADD: expected_registers[rx] = expected_registers[rx] + expected_registers[ry];
 				SUB: expected_registers[rx] = expected_registers[rx] - expected_registers[ry];
 				default: begin
-					$display("Fail, invalid OPCODE used: Expected opcode = %d or %d, opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+					$display("Fail, invalid OPCODE used: %d. Expected opcode = %d or %d", opcode,ADD, SUB);
 				end
 				
 			endcase
@@ -101,10 +103,12 @@ module proc_tb;
 				end
 					
 				else begin
-					$display("Pass Type 1: opcode = %d, RY = %d: Selected RX Register: %d Register Expected = %b, Register Actual = %b", opcode, ry, rx, expected_registers[type_1_i], actual_registers[type_1_i]);
+					//only Accept pass messages for edge cases
+					if (accept_pass_messages) begin
+						$display("Pass Type 1: opcode = %d, RY = %d: Selected RX Register: %d Register Expected = %b, Register Actual = %b", opcode, ry, rx, expected_registers[type_1_i], actual_registers[type_1_i]);
+						end
 					pass_count = pass_count + 1;
 				end			
-			
 			end
 		end
 	
@@ -159,9 +163,11 @@ module proc_tb;
 				end
 					
 				else begin
-					$display("Pass Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+					//only Accept pass messages for edge cases
+					if (accept_pass_messages) begin
+						$display("Pass Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+					end
 					pass_count = pass_count + 1;
-					
 				end			
 			
 			end
@@ -172,8 +178,10 @@ module proc_tb;
 	
 	task edge_cases;
 	
-
+		integer edge_iterator;
+		
 		begin
+			accept_pass_message = 1;
 			// directed edge cases
 			
 			//testing that the boundaries are 16 bits
@@ -192,7 +200,7 @@ module proc_tb;
 			
 			//Testing when the registers are equivalent
 			type_1_instructions(SUB, R3, R3); //result should be 0
-			type_1_instructions(SUB, R2, R2); //result should be -4 + -4 = -8
+			type_1_instructions(SUB, R2, R2); //result should be -4 - (-4) = 0
 			
 			
 			//Testing a single wrap around instance (FFFF to 0000)
@@ -203,8 +211,18 @@ module proc_tb;
 			//final test for sweeps --> checking if Rin works for each register --> each value is checked against all registers to ensure it's working
 			//Movi tests Rin writing for tick 2, Add tests Rin writing for tick 4
 			//Add tests both reading functions (having values placed into the ALU and A registers), and the writing function (writing register G to the desired RX register)
+			for (edge_iterator = 0; edge_iterator < 8; edge_iterator = edge_iterator + 1) begin
+				type_2_instructions(MOVI, edge_iterator[2:0], {edge_iterator[2:0], 6'h15}); //tests random, unique, immediate values and each register
 			
+			end
 			
+			for (edge_iterator = 0; edge_iterator < 8; edge_iterator = edge_iterator + 1) begin
+				type_1_instructions(ADD, edge_iterator[2:0], edge_iterator[2:0] + 3'b1) ; //Making Rin work for Tick 3 and 4; reading and writing register actions checked 
+			
+			end
+			
+			//turning off pass messaging so we can validate failed attempts better
+			accept_pass_message = 0;
 		end
 	
 	
@@ -234,9 +252,10 @@ module proc_tb;
 	fail_count = 0;
 	clk = 0;
 	seed = 4;
-	RX = $random(seed);
-	RY = $random(seed);
-	immediate = $random(seed);
+	RX = 3'd0;
+	RY = 3'd0;
+	immediate = 9'd0;
+	accept_pass_message = 0;
 	
 	
 	//resetting the simple processor
@@ -253,7 +272,7 @@ module proc_tb;
 	end
 	
 	
-
+	edge_cases();
 	
 	
 	for (iterator = 0; iterator < 2000; iterator = iterator  + 1) begin
@@ -261,37 +280,27 @@ module proc_tb;
 		RY = $random(seed);
 		immediate = $random(seed);
 		type_2_instructions(MOVI, RX, immediate);
+		
 		//setting the next register to a different value
 		immediate = $random(seed);
 		type_2_instructions(MOVI, RY, immediate);
 		type_1_instructions(ADD, RX, RY);
+		
+		//Adding another random value as an immediate 
+		immediate = $random(seed);
 		type_2_instructions(ADDI, RX, immediate);
 		type_1_instructions(SUB, RX, RY);
-	
-	
 	end
 	
 	
+	//Summary of Cases
+	if (fail_count == 0) begin
+		$display("Success. No errors were detected in the Simple Processor");
+		end		
+	else begin
+		$display("Failure. Simple Processor Statistics are: Errors = %d, Passes = %d", fail_count, pass_count);
+	end	
 	
-
-
-
-	
-    // TODO: Implement the logic of your testbench here
-	 
-	 //instantiate inputs and outputs of processor --> array with the 4 required op codes, and a 6 bit array to increment by 1 for required values
-	 
-	 //instantiate processor
-	 
-	 //initial begin --> set values to 0/default --> test bench is uses blocking and no clock values
-	 
-	 
-	 //for loop to initialise register values (default random ones by multiplying -i * 6'h1B
-	 
-	 
-	 /*for loop testing all combinations in the 6 bits for each of the 4 ticks for the 4 op codes 
-	 --> bus output value tested at each tick --> if(tick == x), calculate expected then compare at bottom of all loops
-	 
-	 */
+	$stop
 
 endmodule
