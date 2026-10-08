@@ -30,7 +30,7 @@ module simple_proc_top(
 	 );
 	 
 	 assign LEDR = bus[9:0];
-	 assign HEX5 = ~hxi[5:0];
+	 assign HEX5 = ~hxi ;
 	 
 endmodule 
 		 
