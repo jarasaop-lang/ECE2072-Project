@@ -1,5 +1,5 @@
 EDA Netlist Writer report for x72
-Sat Sep 26 17:08:41 2026
+Tue Oct 06 00:16:23 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. EDA Netlist Writer Summary
   3. Simulation Settings
   4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  5. Board-Level Settings
+  6. Board-Level Generated Files
+  7. EDA Netlist Writer Messages
 
 
 
@@ -33,15 +35,16 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                        ;
-+---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Sep 26 17:08:41 2026 ;
-; Revision Name             ; x72                                   ;
-; Top-level Entity Name     ; simple_proc_top                       ;
-; Family                    ; MAX 10                                ;
-; Simulation Files Creation ; Successful                            ;
-+---------------------------+---------------------------------------+
++------------------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                                   ;
++--------------------------------------+---------------------------------------+
+; EDA Netlist Writer Status            ; Successful - Tue Oct 06 00:16:23 2026 ;
+; Revision Name                        ; x72                                   ;
+; Top-level Entity Name                ; simple_proc_top                       ;
+; Family                               ; MAX 10                                ;
+; Simulation Files Creation            ; Successful                            ;
+; Board Timing Analysis Files Creation ; Successful                            ;
++--------------------------------------+---------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -66,13 +69,39 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                          ;
-+-------------------------------------------------------------------------------------+
-; Generated Files                                                                     ;
-+-------------------------------------------------------------------------------------+
-; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simulation/modelsim/x72.vo ;
-+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                  ;
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                             ;
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simulation/modelsim/x72.vo ;
++---------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Board-Level Settings                   ;
++------------------------------+---------+
+; Option                       ; Setting ;
++------------------------------+---------+
+; Board Timing Analysis Format ; STAMP   ;
++------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board-Level Generated Files                                                                                                                                                                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Timing Analysis                                                                                                                                                                                                                                                                              ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_85c_board_slow.mod   ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_85c_board_slow.data  ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_0c_board_slow.mod    ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_0c_board_slow.data   ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_min_1200mv_0c_board_fast.mod  ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_min_1200mv_0c_board_fast.data ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_board.mod                     ;
+;     C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp/C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_board.data                    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,14 +110,18 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 26 17:08:40 2026
+    Info: Processing started: Tue Oct 06 00:16:22 2026
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off x72 -c x72
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (10905): Generated the EDA functional simulation netlist because it is the only supported netlist type for this device.
-Info (204019): Generated file x72.vo in folder "C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file x72.vo in folder "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simulation/modelsim/" for EDA simulation tool
+Info (199047): Generated files "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_85c_board_slow.mod" and "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_85c_board_slow.data"
+Info (199047): Generated files "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_0c_board_slow.mod" and "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_7_1200mv_0c_board_slow.data"
+Info (199047): Generated files "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_min_1200mv_0c_board_fast.mod" and "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_min_1200mv_0c_board_fast.data"
+Info (199047): Generated files "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_board.mod" and "C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/timing/stamp//x72_board.data"
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4654 megabytes
-    Info: Processing ended: Sat Sep 26 17:08:41 2026
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Tue Oct 06 00:16:23 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

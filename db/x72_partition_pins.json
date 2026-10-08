@@ -68,6 +68,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX5[6]",
+					"strict" : false
+				},
+				{
 					"name" : "SW[0]",
 					"strict" : false
 				},

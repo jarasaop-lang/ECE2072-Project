@@ -1,4 +1,4 @@
-module simple_proc_top(
+module simple_proc_top2(
 	 input [8:0] SW,
 	 input [1:0] KEY,
 	 output [9:0] LEDR,
@@ -15,14 +15,9 @@ module simple_proc_top(
 		 .bus(bus),
 		 .clk(~KEY[1]),
 		 .rst(~KEY[0])
-	 );
-	 
-	 tick_FSM t1(
-		 .clk(~KEY[1]),
-		 .rst(~KEY[0]),
-		 .enable(1'b1),
 		 .tick(tk)
 	 );
+	 
 	 
 	 BCD_tickfsm b1(
 		 .tk(tk),
@@ -30,7 +25,7 @@ module simple_proc_top(
 	 );
 	 
 	 assign LEDR = bus[9:0];
-	 assign HEX5 = ~hxi ;
+	 assign HEX5 = ~hxi[6:0];
 	 
 endmodule 
 		 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for x72
-Sat Sep 26 17:08:16 2026
+Tue Oct 06 00:16:01 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,34 +13,32 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: simple_proc:p1
- 13. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R0_reg
- 14. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R1_reg
- 15. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R2_reg
- 16. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R3_reg
- 17. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R4_reg
- 18. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R5_reg
- 19. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R6_reg
- 20. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R7_reg
- 21. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:A
- 22. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:G
- 23. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:IR
- 24. Parameter Settings for User Entity Instance: simple_proc:p1|ALU:controlALU
- 25. Parameter Settings for User Entity Instance: simple_proc:p1|tick_FSM:tick1
- 26. Parameter Settings for User Entity Instance: tick_FSM:t1
- 27. Parameter Settings for User Entity Instance: BCD_tickfsm:b1
- 28. Port Connectivity Checks: "BCD_tickfsm:b1"
- 29. Port Connectivity Checks: "tick_FSM:t1"
- 30. Port Connectivity Checks: "simple_proc:p1|tick_FSM:tick1"
- 31. Port Connectivity Checks: "simple_proc:p1|ALU:controlALU"
- 32. Port Connectivity Checks: "simple_proc:p1"
- 33. Post-Synthesis Netlist Statistics for Top Partition
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: simple_proc:p1
+ 12. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R0_reg
+ 13. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R1_reg
+ 14. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R2_reg
+ 15. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R3_reg
+ 16. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R4_reg
+ 17. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R5_reg
+ 18. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R6_reg
+ 19. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:R7_reg
+ 20. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:A
+ 21. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:G
+ 22. Parameter Settings for User Entity Instance: simple_proc:p1|register_n:IR
+ 23. Parameter Settings for User Entity Instance: simple_proc:p1|ALU:controlALU
+ 24. Parameter Settings for User Entity Instance: simple_proc:p1|tick_FSM:tick1
+ 25. Parameter Settings for User Entity Instance: BCD_tickfsm:b1
+ 26. Parameter Settings for Inferred Entity Instance: simple_proc:p1|ALU:controlALU|lpm_mult:Mult0
+ 27. lpm_mult Parameter Settings by Entity Instance
+ 28. Port Connectivity Checks: "simple_proc:p1|tick_FSM:tick1"
+ 29. Port Connectivity Checks: "simple_proc:p1|ALU:controlALU"
+ 30. Port Connectivity Checks: "simple_proc:p1"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
 
 
 
@@ -66,19 +64,19 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 26 17:08:16 2026       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 06 00:16:01 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; x72                                         ;
 ; Top-level Entity Name              ; simple_proc_top                             ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 217                                         ;
-;     Total combinational functions  ; 137                                         ;
-;     Dedicated logic registers      ; 113                                         ;
-; Total registers                    ; 113                                         ;
+; Total logic elements               ; 404                                         ;
+;     Total combinational functions  ; 276                                         ;
+;     Dedicated logic registers      ; 173                                         ;
+; Total registers                    ; 173                                         ;
 ; Total pins                         ; 28                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 2                                           ;
 ; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
@@ -176,28 +174,35 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
-; BCD_tickfsm.v                    ; yes             ; User Verilog HDL File  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD_tickfsm.v     ;         ;
-; proc.v                           ; yes             ; User Verilog HDL File  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v            ;         ;
-; components.v                     ; yes             ; User Verilog HDL File  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v      ;         ;
-; simple_proc_top.v                ; yes             ; User Verilog HDL File  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simple_proc_top.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
+; simpleproc_toplvl.v              ; yes             ; User Verilog HDL File        ; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v ;         ;
+; BCD_tickfsm.v                    ; yes             ; User Verilog HDL File        ; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v       ;         ;
+; proc.v                           ; yes             ; User Verilog HDL File        ; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v              ;         ;
+; components.v                     ; yes             ; User Verilog HDL File        ; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v        ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                                                                  ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc                                                                ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                                               ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                                                                  ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                                                                  ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                                                                  ;         ;
+; db/mult_tns.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/db/mult_tns.tdf     ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -205,142 +210,77 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 217          ;
+; Estimated Total logic elements              ; 404          ;
 ;                                             ;              ;
-; Total combinational functions               ; 137          ;
+; Total combinational functions               ; 276          ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 81           ;
-;     -- 3 input functions                    ; 31           ;
-;     -- <=2 input functions                  ; 25           ;
+;     -- 4 input functions                    ; 166          ;
+;     -- 3 input functions                    ; 42           ;
+;     -- <=2 input functions                  ; 68           ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 127          ;
-;     -- arithmetic mode                      ; 10           ;
+;     -- normal mode                          ; 244          ;
+;     -- arithmetic mode                      ; 32           ;
 ;                                             ;              ;
-; Total registers                             ; 113          ;
-;     -- Dedicated logic registers            ; 113          ;
+; Total registers                             ; 173          ;
+;     -- Dedicated logic registers            ; 173          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 28           ;
 ;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
+; Embedded Multiplier 9-bit elements          ; 2            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 113          ;
-; Total fan-out                               ; 856          ;
-; Average fan-out                             ; 2.80         ;
+; Maximum fan-out                             ; 173          ;
+; Total fan-out                               ; 1534         ;
+; Average fan-out                             ; 3.03         ;
 +---------------------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                     ; Entity Name     ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
-; |simple_proc_top                ; 137 (0)             ; 113 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 28   ; 0            ; 0          ; |simple_proc_top                                        ; simple_proc_top ; work         ;
-;    |BCD_tickfsm:b1|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|BCD_tickfsm:b1                         ; BCD_tickfsm     ; work         ;
-;    |simple_proc:p1|             ; 130 (9)             ; 113 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1                         ; simple_proc     ; work         ;
-;       |ALU:controlALU|          ; 21 (21)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|ALU:controlALU          ; ALU             ; work         ;
-;       |multiplexer:controlmult| ; 62 (62)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|multiplexer:controlmult ; multiplexer     ; work         ;
-;       |register_n:A|            ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:A            ; register_n      ; work         ;
-;       |register_n:G|            ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:G            ; register_n      ; work         ;
-;       |register_n:IR|           ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:IR           ; register_n      ; work         ;
-;       |register_n:R0_reg|       ; 11 (11)             ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R0_reg       ; register_n      ; work         ;
-;       |register_n:R1_reg|       ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R1_reg       ; register_n      ; work         ;
-;       |register_n:R2_reg|       ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R2_reg       ; register_n      ; work         ;
-;       |register_n:R3_reg|       ; 1 (1)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R3_reg       ; register_n      ; work         ;
-;       |register_n:R4_reg|       ; 2 (2)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R4_reg       ; register_n      ; work         ;
-;       |register_n:R5_reg|       ; 2 (2)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R5_reg       ; register_n      ; work         ;
-;       |register_n:R6_reg|       ; 2 (2)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R6_reg       ; register_n      ; work         ;
-;       |register_n:R7_reg|       ; 2 (2)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R7_reg       ; register_n      ; work         ;
-;       |tick_FSM:tick1|          ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|tick_FSM:tick1          ; tick_FSM        ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                   ; Entity Name     ; Library Name ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------+-----------------+--------------+
+; |simple_proc_top                      ; 276 (0)             ; 173 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 28   ; 0            ; 0          ; |simple_proc_top                                                                      ; simple_proc_top ; work         ;
+;    |BCD_tickfsm:b1|                   ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|BCD_tickfsm:b1                                                       ; BCD_tickfsm     ; work         ;
+;    |simple_proc:p1|                   ; 267 (17)            ; 173 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1                                                       ; simple_proc     ; work         ;
+;       |ALU:controlALU|                ; 109 (109)           ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|ALU:controlALU                                        ; ALU             ; work         ;
+;          |lpm_mult:Mult0|             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|ALU:controlALU|lpm_mult:Mult0                         ; lpm_mult        ; work         ;
+;             |mult_tns:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|ALU:controlALU|lpm_mult:Mult0|mult_tns:auto_generated ; mult_tns        ; work         ;
+;       |multiplexer:controlmult|       ; 97 (97)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|multiplexer:controlmult                               ; multiplexer     ; work         ;
+;       |register_n:A|                  ; 7 (7)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:A                                          ; register_n      ; work         ;
+;       |register_n:G|                  ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:G                                          ; register_n      ; work         ;
+;       |register_n:IR|                 ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:IR                                         ; register_n      ; work         ;
+;       |register_n:R0_reg|             ; 12 (12)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R0_reg                                     ; register_n      ; work         ;
+;       |register_n:R1_reg|             ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R1_reg                                     ; register_n      ; work         ;
+;       |register_n:R2_reg|             ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R2_reg                                     ; register_n      ; work         ;
+;       |register_n:R3_reg|             ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R3_reg                                     ; register_n      ; work         ;
+;       |register_n:R4_reg|             ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R4_reg                                     ; register_n      ; work         ;
+;       |register_n:R5_reg|             ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R5_reg                                     ; register_n      ; work         ;
+;       |register_n:R6_reg|             ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R6_reg                                     ; register_n      ; work         ;
+;       |register_n:R7_reg|             ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|register_n:R7_reg                                     ; register_n      ; work         ;
+;       |tick_FSM:tick1|                ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |simple_proc_top|simple_proc:p1|tick_FSM:tick1                                        ; tick_FSM        ; work         ;
++---------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                         ;
-+----------------------------------------+---------------------------------------------------+
-; Register name                          ; Reason for Removal                                ;
-+----------------------------------------+---------------------------------------------------+
-; tick_FSM:t1|tick[3]                    ; Merged with simple_proc:p1|tick_FSM:tick1|tick[3] ;
-; tick_FSM:t1|tick[2]                    ; Merged with simple_proc:p1|tick_FSM:tick1|tick[2] ;
-; tick_FSM:t1|tick[1]                    ; Merged with simple_proc:p1|tick_FSM:tick1|tick[1] ;
-; tick_FSM:t1|tick[0]                    ; Merged with simple_proc:p1|tick_FSM:tick1|tick[0] ;
-; simple_proc:p1|register_n:R0_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[10] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[10]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R0_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[11] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[11]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R0_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[12] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[12]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R0_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[13] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[13]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R0_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[14] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[14]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R0_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R1_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R2_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R3_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R4_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R5_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R6_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:R7_reg|Q[15] ; Lost fanout                                       ;
-; simple_proc:p1|register_n:G|Q[15]      ; Lost fanout                                       ;
-; simple_proc:p1|register_n:A|Q[10..15]  ; Lost fanout                                       ;
-; Total Number of Removed Registers = 64 ;                                                   ;
-+----------------------------------------+---------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                   ;
-+----------------------------------------+--------------------+---------------------------------------------------------------------------------+
-; Register name                          ; Reason for Removal ; Registers Removed due to This Register                                          ;
-+----------------------------------------+--------------------+---------------------------------------------------------------------------------+
-; simple_proc:p1|register_n:R0_reg|Q[11] ; Lost Fanouts       ; simple_proc:p1|register_n:R5_reg|Q[11], simple_proc:p1|register_n:R7_reg|Q[11], ;
-;                                        ;                    ; simple_proc:p1|register_n:G|Q[11], simple_proc:p1|register_n:A|Q[11]            ;
-; simple_proc:p1|register_n:R0_reg|Q[13] ; Lost Fanouts       ; simple_proc:p1|register_n:R5_reg|Q[13], simple_proc:p1|register_n:R7_reg|Q[13], ;
-;                                        ;                    ; simple_proc:p1|register_n:G|Q[13], simple_proc:p1|register_n:A|Q[13]            ;
-; simple_proc:p1|register_n:R0_reg|Q[15] ; Lost Fanouts       ; simple_proc:p1|register_n:R5_reg|Q[15], simple_proc:p1|register_n:R7_reg|Q[15], ;
-;                                        ;                    ; simple_proc:p1|register_n:G|Q[15], simple_proc:p1|register_n:A|Q[15]            ;
-; simple_proc:p1|register_n:R0_reg|Q[10] ; Lost Fanouts       ; simple_proc:p1|register_n:G|Q[10], simple_proc:p1|register_n:A|Q[10]            ;
-; simple_proc:p1|register_n:R0_reg|Q[12] ; Lost Fanouts       ; simple_proc:p1|register_n:G|Q[12], simple_proc:p1|register_n:A|Q[12]            ;
-; simple_proc:p1|register_n:R0_reg|Q[14] ; Lost Fanouts       ; simple_proc:p1|register_n:G|Q[14], simple_proc:p1|register_n:A|Q[14]            ;
-+----------------------------------------+--------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
 
 
 +------------------------------------------------------+
@@ -348,12 +288,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 113   ;
-; Number of registers using Synchronous Clear  ; 10    ;
+; Total registers                              ; 173   ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 109   ;
+; Number of registers using Clock Enable       ; 169   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -363,22 +303,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:IR|Q[3]            ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R0_reg|Q[12]       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R1_reg|Q[11]       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R2_reg|Q[10]       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R3_reg|Q[12]       ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R4_reg|Q[15]       ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:IR|Q[5]            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R0_reg|Q[4]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R1_reg|Q[6]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R2_reg|Q[14]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R3_reg|Q[15]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R4_reg|Q[7]        ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R5_reg|Q[1]        ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R6_reg|Q[1]        ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R7_reg|Q[5]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:R7_reg|Q[12]       ;
 ; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |simple_proc_top|simple_proc:p1|register_n:A|Q[15]            ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |simple_proc_top|BCD_tickfsm:b1|tkhex[0]                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |simple_proc_top|BCD_tickfsm:b1|tkhex[0]                      ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |simple_proc_top|simple_proc:p1|ALU:controlALU|Mux18          ;
 ; 16:1               ; 8 bits    ; 80 LEs        ; 56 LEs               ; 24 LEs                 ; No         ; |simple_proc_top|simple_proc:p1|multiplexer:controlmult|Mux15 ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |simple_proc_top|simple_proc:p1|Mux9                          ;
-; 18:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; No         ; |simple_proc_top|simple_proc:p1|Selector11                    ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |simple_proc_top|simple_proc:p1|multiplexer:controlmult|Mux7  ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; No         ; |simple_proc_top|simple_proc:p1|Selector0                     ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; No         ; |simple_proc_top|simple_proc:p1|Mux5                          ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |simple_proc_top|simple_proc:p1|multiplexer:controlmult|Mux0  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -528,16 +468,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: tick_FSM:t1 ;
-+----------------+-------+---------------------------------+
-; Parameter Name ; Value ; Type                            ;
-+----------------+-------+---------------------------------+
-; t1             ; 0001  ; Unsigned Binary                 ;
-+----------------+-------+---------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: BCD_tickfsm:b1 ;
 +----------------+-------+------------------------------------+
@@ -551,22 +481,59 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "BCD_tickfsm:b1"                                                                         ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; tkhex[6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_proc:p1|ALU:controlALU|lpm_mult:Mult0 ;
++------------------------------------------------+----------+-----------------------------------+
+; Parameter Name                                 ; Value    ; Type                              ;
++------------------------------------------------+----------+-----------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                    ;
+; LPM_WIDTHA                                     ; 16       ; Untyped                           ;
+; LPM_WIDTHB                                     ; 16       ; Untyped                           ;
+; LPM_WIDTHP                                     ; 32       ; Untyped                           ;
+; LPM_WIDTHR                                     ; 32       ; Untyped                           ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                           ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                           ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                           ;
+; LATENCY                                        ; 0        ; Untyped                           ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                           ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                           ;
+; USE_EAB                                        ; OFF      ; Untyped                           ;
+; MAXIMIZE_SPEED                                 ; 6        ; Untyped                           ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                           ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                           ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K               ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                           ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                           ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                           ;
+; CBXI_PARAMETER                                 ; mult_tns ; Untyped                           ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                           ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                           ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                           ;
++------------------------------------------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------+
-; Port Connectivity Checks: "tick_FSM:t1"  ;
-+--------+-------+----------+--------------+
-; Port   ; Type  ; Severity ; Details      ;
-+--------+-------+----------+--------------+
-; enable ; Input ; Info     ; Stuck at VCC ;
-+--------+-------+----------+--------------+
++--------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                       ;
++---------------------------------------+----------------------------------------------+
+; Name                                  ; Value                                        ;
++---------------------------------------+----------------------------------------------+
+; Number of entity instances            ; 1                                            ;
+; Entity Instance                       ; simple_proc:p1|ALU:controlALU|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                           ;
+;     -- LPM_WIDTHB                     ; 16                                           ;
+;     -- LPM_WIDTHP                     ; 32                                           ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                     ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                           ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                           ;
+;     -- USE_EAB                        ; OFF                                          ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                         ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                           ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                           ;
++---------------------------------------+----------------------------------------------+
 
 
 +-----------------------------------------------------------+
@@ -610,22 +577,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 28                          ;
-; cycloneiii_ff         ; 113                         ;
-;     ENA               ; 99                          ;
-;     ENA SCLR          ; 10                          ;
+; cycloneiii_ff         ; 173                         ;
+;     ENA               ; 153                         ;
+;     ENA SCLR          ; 16                          ;
 ;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 143                         ;
-;     arith             ; 10                          ;
-;         3 data inputs ; 10                          ;
-;     normal            ; 133                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 25                          ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 81                          ;
+; cycloneiii_lcell_comb ; 282                         ;
+;     arith             ; 32                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 16                          ;
+;     normal            ; 250                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 166                         ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.90                        ;
-; Average LUT depth     ; 5.88                        ;
+; Max LUT depth         ; 12.40                       ;
+; Average LUT depth     ; 8.29                        ;
 +-----------------------+-----------------------------+
 
 
@@ -634,7 +603,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -644,76 +613,81 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Sep 26 17:08:07 2026
+    Info: Processing started: Tue Oct 06 00:15:18 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off x72 -c x72
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file proc_tb.v
-    Info (12023): Found entity 1: proc_tb File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_tb.v Line: 9
+    Info (12023): Found entity 1: proc_tb File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_tb.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file proc_extension_tb.v
-    Info (12023): Found entity 1: proc_tb2 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension_tb.v Line: 9
+    Info (12023): Found entity 1: proc_tb2 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file proc_extension.v
-    Info (12023): Found entity 1: simple_procext File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 18
+    Info (12023): Found entity 1: simple_procext File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file simpleproc_toplvl.v
+    Info (12023): Found entity 1: simple_proc_top File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_tickfsm.v
-    Info (12023): Found entity 1: BCD_tickfsm File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD_tickfsm.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file proc.v
-    Info (12023): Found entity 1: simple_proc File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 8
-Warning (10090): Verilog HDL syntax warning at components_tb.v(107): extra block comment delimiter characters /* within block comment File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v Line: 107
-Info (12021): Found 1 design units, including 1 entities, in source file components_tb.v
-    Info (12023): Found entity 1: components_tb File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v Line: 10
-Info (12021): Found 5 design units, including 5 entities, in source file components.v
-    Info (12023): Found entity 1: sign_extend File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 9
-    Info (12023): Found entity 2: tick_FSM File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 24
-    Info (12023): Found entity 3: multiplexer File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 52
-    Info (12023): Found entity 4: ALU File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 94
-    Info (12023): Found entity 5: register_n File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 187
+    Info (12023): Found entity 1: BCD_tickfsm File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file display_divide.v
-    Info (12023): Found entity 1: display_divide File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v Line: 39
+    Info (12023): Found entity 1: display_divide File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display_divide.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file display.v
-    Info (12023): Found entity 1: display File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display.v Line: 1
+    Info (12023): Found entity 1: display File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file bcd.v
-    Info (12023): Found entity 1: BCD File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD.v Line: 1
+    Info (12023): Found entity 1: BCD File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file simple_proc_top.v
-    Info (12023): Found entity 1: simple_proc_top File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simple_proc_top.v Line: 1
+    Info (12023): Found entity 1: simple_proc_top2 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simple_proc_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc.v
+    Info (12023): Found entity 1: simple_proc File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file components_tb.v
+    Info (12023): Found entity 1: components_tb File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v Line: 10
+Info (12021): Found 5 design units, including 5 entities, in source file components.v
+    Info (12023): Found entity 1: sign_extend File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 9
+    Info (12023): Found entity 2: tick_FSM File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 24
+    Info (12023): Found entity 3: multiplexer File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 52
+    Info (12023): Found entity 4: ALU File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 94
+    Info (12023): Found entity 5: register_n File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 187
 Info (12127): Elaborating entity "simple_proc_top" for the top level hierarchy
-Info (12128): Elaborating entity "simple_proc" for hierarchy "simple_proc:p1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simple_proc_top.v Line: 18
-Warning (10235): Verilog HDL Always Construct warning at proc.v(161): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 161
-Warning (10235): Verilog HDL Always Construct warning at proc.v(164): variable "RX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 164
-Warning (10235): Verilog HDL Always Construct warning at proc.v(169): variable "RX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 169
-Warning (10235): Verilog HDL Always Construct warning at proc.v(187): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 187
-Warning (10235): Verilog HDL Always Construct warning at proc.v(190): variable "RY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 190
-Warning (10235): Verilog HDL Always Construct warning at proc.v(195): variable "RY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 195
-Warning (10235): Verilog HDL Always Construct warning at proc.v(200): variable "RX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 200
-Warning (10235): Verilog HDL Always Construct warning at proc.v(212): variable "opcode" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 212
-Warning (10235): Verilog HDL Always Construct warning at proc.v(215): variable "RX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 215
-Info (10264): Verilog HDL Case Statement information at proc.v(151): all case item expressions in this case statement are onehot File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 151
-Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:p1|register_n:R0_reg" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 53
-Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:p1|register_n:IR" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 87
-Info (12128): Elaborating entity "sign_extend" for hierarchy "simple_proc:p1|sign_extend:s1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 95
-Info (12128): Elaborating entity "multiplexer" for hierarchy "simple_proc:p1|multiplexer:controlmult" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 109
-Info (12128): Elaborating entity "ALU" for hierarchy "simple_proc:p1|ALU:controlALU" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 121
-Warning (10230): Verilog HDL assignment warning at components.v(137): truncated value with size 32 to match size of target (18) File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 137
-Warning (10230): Verilog HDL assignment warning at components.v(140): truncated value with size 32 to match size of target (4) File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 140
-Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "s", which holds its previous value in one or more paths through the always construct File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 117
-Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "ve", which holds its previous value in one or more paths through the always construct File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 117
-Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 117
-Info (12128): Elaborating entity "tick_FSM" for hierarchy "simple_proc:p1|tick_FSM:tick1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 134
-Info (12128): Elaborating entity "BCD_tickfsm" for hierarchy "BCD_tickfsm:b1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simple_proc_top.v Line: 30
+Info (12128): Elaborating entity "simple_proc" for hierarchy "simple_proc:p1" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v Line: 18
+Info (10264): Verilog HDL Case Statement information at proc.v(151): all case item expressions in this case statement are onehot File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 151
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:p1|register_n:R0_reg" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 53
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_proc:p1|register_n:IR" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 87
+Info (12128): Elaborating entity "sign_extend" for hierarchy "simple_proc:p1|sign_extend:s1" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 95
+Info (12128): Elaborating entity "multiplexer" for hierarchy "simple_proc:p1|multiplexer:controlmult" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 109
+Info (12128): Elaborating entity "ALU" for hierarchy "simple_proc:p1|ALU:controlALU" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 121
+Warning (10230): Verilog HDL assignment warning at components.v(137): truncated value with size 32 to match size of target (18) File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 137
+Warning (10230): Verilog HDL assignment warning at components.v(140): truncated value with size 32 to match size of target (4) File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 140
+Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "s", which holds its previous value in one or more paths through the always construct File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 117
+Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "ve", which holds its previous value in one or more paths through the always construct File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 117
+Warning (10240): Verilog HDL Always Construct warning at components.v(117): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 117
+Info (12128): Elaborating entity "tick_FSM" for hierarchy "simple_proc:p1|tick_FSM:tick1" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc.v Line: 134
+Info (12128): Elaborating entity "BCD_tickfsm" for hierarchy "BCD_tickfsm:b1" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simpleproc_toplvl.v Line: 24
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "simple_proc:p1|ALU:controlALU|Mult0" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 126
+Info (12130): Elaborated megafunction instantiation "simple_proc:p1|ALU:controlALU|lpm_mult:Mult0" File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 126
+Info (12133): Instantiated megafunction "simple_proc:p1|ALU:controlALU|lpm_mult:Mult0" with the following parameter: File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v Line: 126
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_tns.tdf
+    Info (12023): Found entity 1: mult_tns File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/db/mult_tns.tdf Line: 28
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simple_proc_top.v Line: 6
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 60 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 255 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 450 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 227 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 19 warnings
-    Info: Peak virtual memory: 4835 megabytes
-    Info: Processing ended: Sat Sep 26 17:08:16 2026
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:16
+    Info (21061): Implemented 420 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4801 megabytes
+    Info: Processing ended: Tue Oct 06 00:16:01 2026
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:00:27
 
 
