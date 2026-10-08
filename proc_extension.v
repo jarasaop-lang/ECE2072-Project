@@ -15,7 +15,7 @@ This file contains Verilog code to implement individual the CPU.
 Please enter your student ID:
 
 */
-module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
+module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, val1, val2, val3, val4, val5, enable, tick, display); 
 
     // Note: The skeleton you are provided with includes output ports to output the values of the internal registers R0 - R7, for the purpose of test benching. When instantiating the processor to program your DE10-lite, you can leave these ports unused.
 
@@ -24,24 +24,31 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 	 
 	
 	input clk, rst;
+	input enable;
 	input [8:0] din;
 	
 	
 	output [15:0] R0, R1, R2, R3, R4, R5, R6, R7;	
 	output [15:0] bus;
+	output [7:0] val0, val1, val2, val3, val4;
+	output [6:0] val5;
+	
+	output [3:0] tick;
+    output [15:0] display;
 
     // TODO: declare wires:
     
-	 
+	 wire [15:0] disp;
 	 reg Ain, Gin, IRin, Hin;
 	 reg [7:0] Rin;
 	 reg [3:0] select;
 	 reg [2:0] ALUop;
 	 
 	 
-	 wire sign_extended_Din;
 	 wire [15:0] G_out, A_out, H_out, ALU_result, SignExtDin;
-	 wire [3:0] tick;
+     assign disp = H_out;
+     assign display = disp;
+
 	 wire [8:0] IR_out;
 	 
 	 //Intialising the IR register components into their own wires
@@ -144,7 +151,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 	tick_FSM tick1(
 		 .rst(rst),
 		 .clk(clk),
-		 .enable(1'b1),
+		 .enable(enable),
 		 .tick(tick)
 		 
 	);
@@ -154,7 +161,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
     
     
     // TODO: define control unit:
-    always @(tick, IR_out) begin
+    always @(*) begin
         // TODO: Turn off all control signals:
 		  
 		  Ain = 1'b0;
@@ -162,12 +169,14 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 		  Hin = 1'b0;
 		  Rin = 8'b0;
 		  IRin = 1'b0;
-		  select = 4'bxxxx;
-		  ALUop = 3'bxxx;
+		  select = 4'b0000;
+		  ALUop = 3'b000;
 		  
 
 
         // TODO: Turn on specific control signals based on current tick:
+        // Freeze register writes as well as the tick when disabled.
+        if (enable) begin
         case (tick)
             4'b0001:
                 begin
@@ -195,7 +204,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
 						
 						DISP: begin
 							Hin = 1;
-							select = SEL_DIN;
+							select = RX;
 						end
 						
 						default: ;
@@ -264,7 +273,26 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7);
                 end
 
         endcase
+        end // if (enable)
+    end // always @(*) -- module instances must follow this end.
 
-    end
-
+		  
+		  //Display functionality
+		  
+		  display dis1(
+				.H_out(disp),
+				.val0(val0),
+				.val1(val1),
+				.val2(val2),
+				.val3(val3),
+				.val4(val4)
+		  );
+		  
+		  // Tick FSM functionality
+		 BCD_tickfsm b1(
+			  .tk(tick),
+		     .tkhex(val5)
+	    );
+	 		  
+		  
 endmodule

@@ -1,4 +1,4 @@
-module simple_proc_top2(
+module simple_proc_top(
 	 input [8:0] SW,
 	 input [1:0] KEY,
 	 output [9:0] LEDR,
@@ -14,7 +14,7 @@ module simple_proc_top2(
 		 .din(SW[8:0]),
 		 .bus(bus),
 		 .clk(~KEY[1]),
-		 .rst(~KEY[0])
+		 .rst(~KEY[0]),
 		 .tick(tk)
 	 );
 	 

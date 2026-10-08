@@ -1,0 +1,1025 @@
+Analysis & Synthesis report for x72_extension
+Thu Oct 08 14:48:17 2026
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: simple_procext:pe1
+ 13. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R0_reg
+ 14. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R1_reg
+ 15. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R2_reg
+ 16. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R3_reg
+ 17. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R4_reg
+ 18. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R5_reg
+ 19. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R6_reg
+ 20. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R7_reg
+ 21. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:A
+ 22. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:G
+ 23. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:H
+ 24. Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:IR
+ 25. Parameter Settings for User Entity Instance: simple_procext:pe1|ALU:controlALU
+ 26. Parameter Settings for User Entity Instance: simple_procext:pe1|tick_FSM:tick1
+ 27. Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component
+ 28. Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component
+ 29. Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component
+ 30. Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component
+ 31. Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h4|lpm_divide:LPM_DIVIDE_component
+ 32. Parameter Settings for User Entity Instance: simple_procext:pe1|BCD_tickfsm:b1
+ 33. Parameter Settings for Inferred Entity Instance: simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0
+ 34. lpm_mult Parameter Settings by Entity Instance
+ 35. Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v4"
+ 36. Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v3"
+ 37. Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v2"
+ 38. Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v1"
+ 39. Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v0"
+ 40. Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h4"
+ 41. Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h3"
+ 42. Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h2"
+ 43. Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h1"
+ 44. Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h0"
+ 45. Port Connectivity Checks: "simple_procext:pe1|ALU:controlALU"
+ 46. Port Connectivity Checks: "simple_procext:pe1"
+ 47. Post-Synthesis Netlist Statistics for Top Partition
+ 48. Elapsed Time Per Partition
+ 49. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 08 14:48:17 2026       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; x72_extension                               ;
+; Top-level Entity Name              ; procext_toplvl                              ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 1,187                                       ;
+;     Total combinational functions  ; 1,043                                       ;
+;     Dedicated logic registers      ; 189                                         ;
+; Total registers                    ; 189                                         ;
+; Total pins                         ; 70                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 2                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; procext_toplvl     ; x72_extension      ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processors 6-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+; proc_extension.v                 ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v           ;         ;
+; BCD_tickfsm.v                    ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD_tickfsm.v              ;         ;
+; display_divide.v                 ; yes             ; User Wizard-Generated File   ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v           ;         ;
+; display.v                        ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display.v                  ;         ;
+; BCD.v                            ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD.v                      ;         ;
+; proc_extension_top_lvl.v         ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension_top_lvl.v   ;         ;
+; components.v                     ; yes             ; User Verilog HDL File        ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf               ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc              ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc          ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc               ;         ;
+; db/lpm_divide_m3s.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/lpm_divide_m3s.tdf      ;         ;
+; db/sign_div_unsign_dnh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/sign_div_unsign_dnh.tdf ;         ;
+; db/alt_u_div_4le.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/alt_u_div_4le.tdf       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/add_sub_t3c.tdf         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/add_sub_u3c.tdf         ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mult.tdf                 ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/multcore.inc                 ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mult_tns.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/mult_tns.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 1,187        ;
+;                                             ;              ;
+; Total combinational functions               ; 1043         ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 327          ;
+;     -- 3 input functions                    ; 323          ;
+;     -- <=2 input functions                  ; 393          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 700          ;
+;     -- arithmetic mode                      ; 343          ;
+;                                             ;              ;
+; Total registers                             ; 189          ;
+;     -- Dedicated logic registers            ; 189          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 70           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 2            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 189          ;
+; Total fan-out                               ; 3733         ;
+; Average fan-out                             ; 2.72         ;
++---------------------------------------------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                   ; Entity Name         ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |procext_toplvl                                 ; 1043 (0)            ; 189 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 70   ; 0            ; 0          ; |procext_toplvl                                                                                                                                                                       ; procext_toplvl      ; work         ;
+;    |simple_procext:pe1|                         ; 1043 (23)           ; 189 (0)                   ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1                                                                                                                                                    ; simple_procext      ; work         ;
+;       |ALU:controlALU|                          ; 231 (231)           ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|ALU:controlALU                                                                                                                                     ; ALU                 ; work         ;
+;          |lpm_mult:Mult0|                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0                                                                                                                      ; lpm_mult            ; work         ;
+;             |mult_tns:auto_generated|           ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 2            ; 0       ; 1         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0|mult_tns:auto_generated                                                                                              ; mult_tns            ; work         ;
+;       |BCD_tickfsm:b1|                          ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|BCD_tickfsm:b1                                                                                                                                     ; BCD_tickfsm         ; work         ;
+;       |display:display1|                        ; 640 (29)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1                                                                                                                                   ; display             ; work         ;
+;          |BCD:v0|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|BCD:v0                                                                                                                            ; BCD                 ; work         ;
+;          |BCD:v1|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|BCD:v1                                                                                                                            ; BCD                 ; work         ;
+;          |BCD:v2|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|BCD:v2                                                                                                                            ; BCD                 ; work         ;
+;          |BCD:v3|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|BCD:v3                                                                                                                            ; BCD                 ; work         ;
+;          |BCD:v4|                               ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|BCD:v4                                                                                                                            ; BCD                 ; work         ;
+;          |display_divide:h0|                    ; 219 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0                                                                                                                 ; display_divide      ; work         ;
+;             |lpm_divide:LPM_DIVIDE_component|   ; 219 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_m3s:auto_generated|  ; 219 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated                                                   ; lpm_divide_m3s      ; work         ;
+;                   |sign_div_unsign_dnh:divider| ; 219 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                      |alt_u_div_4le:divider|    ; 219 (219)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider ; alt_u_div_4le       ; work         ;
+;          |display_divide:h1|                    ; 193 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1                                                                                                                 ; display_divide      ; work         ;
+;             |lpm_divide:LPM_DIVIDE_component|   ; 193 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_m3s:auto_generated|  ; 193 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated                                                   ; lpm_divide_m3s      ; work         ;
+;                   |sign_div_unsign_dnh:divider| ; 193 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                      |alt_u_div_4le:divider|    ; 193 (193)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider ; alt_u_div_4le       ; work         ;
+;          |display_divide:h2|                    ; 121 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2                                                                                                                 ; display_divide      ; work         ;
+;             |lpm_divide:LPM_DIVIDE_component|   ; 121 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_m3s:auto_generated|  ; 121 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated                                                   ; lpm_divide_m3s      ; work         ;
+;                   |sign_div_unsign_dnh:divider| ; 121 (0)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                      |alt_u_div_4le:divider|    ; 121 (121)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider ; alt_u_div_4le       ; work         ;
+;          |display_divide:h3|                    ; 43 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3                                                                                                                 ; display_divide      ; work         ;
+;             |lpm_divide:LPM_DIVIDE_component|   ; 43 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component                                                                                 ; lpm_divide          ; work         ;
+;                |lpm_divide_m3s:auto_generated|  ; 43 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated                                                   ; lpm_divide_m3s      ; work         ;
+;                   |sign_div_unsign_dnh:divider| ; 43 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider                       ; sign_div_unsign_dnh ; work         ;
+;                      |alt_u_div_4le:divider|    ; 43 (43)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider ; alt_u_div_4le       ; work         ;
+;       |multiplexer:controlmult|                 ; 100 (100)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|multiplexer:controlmult                                                                                                                            ; multiplexer         ; work         ;
+;       |register_n:A|                            ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:A                                                                                                                                       ; register_n          ; work         ;
+;       |register_n:G|                            ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:G                                                                                                                                       ; register_n          ; work         ;
+;       |register_n:H|                            ; 7 (7)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:H                                                                                                                                       ; register_n          ; work         ;
+;       |register_n:IR|                           ; 10 (10)             ; 9 (9)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:IR                                                                                                                                      ; register_n          ; work         ;
+;       |register_n:R0_reg|                       ; 12 (12)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R0_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R1_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R1_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R2_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R2_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R3_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R3_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R4_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R4_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R5_reg|                       ; 2 (2)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R5_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R6_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R6_reg                                                                                                                                  ; register_n          ; work         ;
+;       |register_n:R7_reg|                       ; 1 (1)               ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|register_n:R7_reg                                                                                                                                  ; register_n          ; work         ;
+;       |tick_FSM:tick1|                          ; 5 (5)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |procext_toplvl|simple_procext:pe1|tick_FSM:tick1                                                                                                                                     ; tick_FSM            ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 0           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                    ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------+------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                       ; IP Include File  ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------+------------------+
+; Altera ; LPM_DIVIDE   ; 18.1    ; N/A          ; N/A          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h0 ; display_divide.v ;
+; Altera ; LPM_DIVIDE   ; 18.1    ; N/A          ; N/A          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h1 ; display_divide.v ;
+; Altera ; LPM_DIVIDE   ; 18.1    ; N/A          ; N/A          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h2 ; display_divide.v ;
+; Altera ; LPM_DIVIDE   ; 18.1    ; N/A          ; N/A          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h3 ; display_divide.v ;
+; Altera ; LPM_DIVIDE   ; 18.1    ; N/A          ; N/A          ; |procext_toplvl|simple_procext:pe1|display:display1|display_divide:h4 ; display_divide.v ;
++--------+--------------+---------+--------------+--------------+-----------------------------------------------------------------------+------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 189   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 189   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |procext_toplvl|simple_procext:pe1|tick_FSM:tick1|tick[2]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R0_reg|Q[5]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R1_reg|Q[10]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R2_reg|Q[9]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R3_reg|Q[11]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R4_reg|Q[6]        ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R5_reg|Q[15]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R6_reg|Q[13]       ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:R7_reg|Q[0]        ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:IR|Q[3]            ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:H|Q[0]             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |procext_toplvl|simple_procext:pe1|register_n:A|Q[4]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |procext_toplvl|simple_procext:pe1|BCD_tickfsm:b1|tkhex[2]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |procext_toplvl|simple_procext:pe1|Ain                           ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |procext_toplvl|simple_procext:pe1|ALU:controlALU|Mux18          ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 56 LEs               ; 24 LEs                 ; No         ; |procext_toplvl|simple_procext:pe1|multiplexer:controlmult|Mux15 ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; No         ; |procext_toplvl|simple_procext:pe1|Rin[4]                        ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 56 LEs               ; 8 LEs                  ; No         ; |procext_toplvl|simple_procext:pe1|multiplexer:controlmult|Mux6  ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 4 LEs                ; 28 LEs                 ; No         ; |procext_toplvl|simple_procext:pe1|select[2]                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; ADD            ; 001   ; Unsigned Binary                        ;
+; SUB            ; 011   ; Unsigned Binary                        ;
+; ADDI           ; 010   ; Unsigned Binary                        ;
+; MOVI           ; 111   ; Unsigned Binary                        ;
+; DISP           ; 000   ; Unsigned Binary                        ;
+; SSI            ; 101   ; Unsigned Binary                        ;
+; MUL            ; 100   ; Unsigned Binary                        ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R0_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R1_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R2_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R3_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R4_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R5_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R6_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:R7_reg ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 16    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:A ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; N              ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:G ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; N              ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:H ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; N              ; 16    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|register_n:IR ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; N              ; 9     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|ALU:controlALU ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; add            ; 001   ; Unsigned Binary                                       ;
+; sub            ; 010   ; Unsigned Binary                                       ;
+; mul            ; 000   ; Unsigned Binary                                       ;
+; ss             ; 011   ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|tick_FSM:tick1 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; t1             ; 0001  ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                                                           ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_m3s ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h1|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                                                           ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_m3s ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h2|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                                                           ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_m3s ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h3|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                                                           ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_m3s ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|display:display1|display_divide:h4|lpm_divide:LPM_DIVIDE_component ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                                     ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 16             ; Signed Integer                                                                           ;
+; LPM_WIDTHD             ; 16             ; Signed Integer                                                                           ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_m3s ; Untyped                                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                                           ;
++------------------------+----------------+------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simple_procext:pe1|BCD_tickfsm:b1 ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; t1             ; 0001  ; Unsigned Binary                                       ;
+; t2             ; 0010  ; Unsigned Binary                                       ;
+; t3             ; 0100  ; Unsigned Binary                                       ;
+; t4             ; 1000  ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0 ;
++------------------------------------------------+----------+---------------------------------------+
+; Parameter Name                                 ; Value    ; Type                                  ;
++------------------------------------------------+----------+---------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON       ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS                           ; OFF      ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS                            ; ON       ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF      ; IGNORE_CASCADE                        ;
+; LPM_WIDTHA                                     ; 16       ; Untyped                               ;
+; LPM_WIDTHB                                     ; 16       ; Untyped                               ;
+; LPM_WIDTHP                                     ; 32       ; Untyped                               ;
+; LPM_WIDTHR                                     ; 32       ; Untyped                               ;
+; LPM_WIDTHS                                     ; 1        ; Untyped                               ;
+; LPM_REPRESENTATION                             ; UNSIGNED ; Untyped                               ;
+; LPM_PIPELINE                                   ; 0        ; Untyped                               ;
+; LATENCY                                        ; 0        ; Untyped                               ;
+; INPUT_A_IS_CONSTANT                            ; NO       ; Untyped                               ;
+; INPUT_B_IS_CONSTANT                            ; NO       ; Untyped                               ;
+; USE_EAB                                        ; OFF      ; Untyped                               ;
+; MAXIMIZE_SPEED                                 ; 6        ; Untyped                               ;
+; DEVICE_FAMILY                                  ; MAX 10   ; Untyped                               ;
+; CARRY_CHAIN                                    ; MANUAL   ; Untyped                               ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT      ; TECH_MAPPER_APEX20K                   ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO     ; Untyped                               ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0        ; Untyped                               ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0        ; Untyped                               ;
+; CBXI_PARAMETER                                 ; mult_tns ; Untyped                               ;
+; INPUT_A_FIXED_VALUE                            ; Bx       ; Untyped                               ;
+; INPUT_B_FIXED_VALUE                            ; Bx       ; Untyped                               ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF      ; Untyped                               ;
++------------------------------------------------+----------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                           ;
++---------------------------------------+--------------------------------------------------+
+; Name                                  ; Value                                            ;
++---------------------------------------+--------------------------------------------------+
+; Number of entity instances            ; 1                                                ;
+; Entity Instance                       ; simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                                               ;
+;     -- LPM_WIDTHB                     ; 16                                               ;
+;     -- LPM_WIDTHP                     ; 32                                               ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                               ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                               ;
+;     -- USE_EAB                        ; OFF                                              ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                             ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                               ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                               ;
++---------------------------------------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v4"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; X[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v3"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; X[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v2"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; X[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v1"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; X[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|BCD:v0"                                         ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; X[7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h4"                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[15..4]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; quotient      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; remain[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h3"                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[15..4]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h2"                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[15..4]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h1"                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[15..4]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|display:display1|display_divide:h0"                                       ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; denom[15..4]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[3]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[2]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; denom[1]      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; denom[0]      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; remain[15..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1|ALU:controlALU" ;
++-----------+-------+----------+--------------------------------+
+; Port      ; Type  ; Severity ; Details                        ;
++-----------+-------+----------+--------------------------------+
+; alu_op[2] ; Input ; Info     ; Stuck at GND                   ;
++-----------+-------+----------+--------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "simple_procext:pe1"                                                                                                ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                                                  ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; bus[15..10]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; display[14..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; tick           ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; R0             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R1             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R2             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R3             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R4             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R5             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R6             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; R7             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 70                          ;
+; cycloneiii_ff         ; 189                         ;
+;     ENA               ; 173                         ;
+;     ENA SCLR          ; 16                          ;
+; cycloneiii_lcell_comb ; 1065                        ;
+;     arith             ; 343                         ;
+;         1 data inputs ; 13                          ;
+;         2 data inputs ; 288                         ;
+;         3 data inputs ; 42                          ;
+;     normal            ; 722                         ;
+;         0 data inputs ; 30                          ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 61                          ;
+;         3 data inputs ; 281                         ;
+;         4 data inputs ; 327                         ;
+; cycloneiii_mac_mult   ; 1                           ;
+; cycloneiii_mac_out    ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 39.30                       ;
+; Average LUT depth     ; 26.07                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:09     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Oct 08 14:47:53 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off x72_extension -c x72_extension
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file proc_tb.v
+    Info (12023): Found entity 1: proc_tb File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_tb.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension_tb.v
+    Info (12023): Found entity 1: proc_tb2 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension_tb.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension.v
+    Info (12023): Found entity 1: simple_procext File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_tickfsm.v
+    Info (12023): Found entity 1: BCD_tickfsm File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD_tickfsm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file display_divide.v
+    Info (12023): Found entity 1: display_divide File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file display.v
+    Info (12023): Found entity 1: display File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd.v
+    Info (12023): Found entity 1: BCD File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/BCD.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc_extension_top_lvl.v
+    Info (12023): Found entity 1: procext_toplvl File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension_top_lvl.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file proc.v
+    Info (12023): Found entity 1: simple_proc File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file components_tb.v
+    Info (12023): Found entity 1: components_tb File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v Line: 10
+Info (12021): Found 5 design units, including 5 entities, in source file components.v
+    Info (12023): Found entity 1: sign_extend File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 9
+    Info (12023): Found entity 2: tick_FSM File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 24
+    Info (12023): Found entity 3: multiplexer File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 52
+    Info (12023): Found entity 4: ALU File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 94
+    Info (12023): Found entity 5: register_n File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 190
+Info (12127): Elaborating entity "procext_toplvl" for the top level hierarchy
+Info (12128): Elaborating entity "simple_procext" for hierarchy "simple_procext:pe1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension_top_lvl.v Line: 32
+Info (10264): Verilog HDL Case Statement information at proc_extension.v(178): all case item expressions in this case statement are onehot File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 178
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_procext:pe1|register_n:R0_reg" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 68
+Info (12128): Elaborating entity "register_n" for hierarchy "simple_procext:pe1|register_n:IR" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 107
+Info (12128): Elaborating entity "sign_extend" for hierarchy "simple_procext:pe1|sign_extend:s1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 116
+Info (12128): Elaborating entity "multiplexer" for hierarchy "simple_procext:pe1|multiplexer:controlmult" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 130
+Info (12128): Elaborating entity "ALU" for hierarchy "simple_procext:pe1|ALU:controlALU" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 142
+Info (12128): Elaborating entity "tick_FSM" for hierarchy "simple_procext:pe1|tick_FSM:tick1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 155
+Info (12128): Elaborating entity "display" for hierarchy "simple_procext:pe1|display:display1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 287
+Info (12128): Elaborating entity "display_divide" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display.v Line: 23
+Info (12128): Elaborating entity "lpm_divide" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v Line: 62
+Info (12130): Elaborated megafunction instantiation "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v Line: 62
+Info (12133): Instantiated megafunction "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component" with the following parameter: File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display_divide.v Line: 62
+    Info (12134): Parameter "lpm_drepresentation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_hint" = "LPM_REMAINDERPOSITIVE=TRUE"
+    Info (12134): Parameter "lpm_nrepresentation" = "UNSIGNED"
+    Info (12134): Parameter "lpm_type" = "LPM_DIVIDE"
+    Info (12134): Parameter "lpm_widthd" = "16"
+    Info (12134): Parameter "lpm_widthn" = "16"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_m3s.tdf
+    Info (12023): Found entity 1: lpm_divide_m3s File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/lpm_divide_m3s.tdf Line: 24
+Info (12128): Elaborating entity "lpm_divide_m3s" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated" File: c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf Line: 147
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dnh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dnh File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/sign_div_unsign_dnh.tdf Line: 24
+Info (12128): Elaborating entity "sign_div_unsign_dnh" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/lpm_divide_m3s.tdf Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_4le.tdf
+    Info (12023): Found entity 1: alt_u_div_4le File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/alt_u_div_4le.tdf Line: 26
+Info (12128): Elaborating entity "alt_u_div_4le" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/sign_div_unsign_dnh.tdf Line: 32
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/add_sub_t3c.tdf Line: 22
+Info (12128): Elaborating entity "add_sub_t3c" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_t3c:add_sub_0" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/alt_u_div_4le.tdf Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/add_sub_u3c.tdf Line: 22
+Info (12128): Elaborating entity "add_sub_u3c" for hierarchy "simple_procext:pe1|display:display1|display_divide:h0|lpm_divide:LPM_DIVIDE_component|lpm_divide_m3s:auto_generated|sign_div_unsign_dnh:divider|alt_u_div_4le:divider|add_sub_u3c:add_sub_1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/alt_u_div_4le.tdf Line: 35
+Info (12128): Elaborating entity "BCD" for hierarchy "simple_procext:pe1|display:display1|BCD:v0" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/display.v Line: 58
+Info (12128): Elaborating entity "BCD_tickfsm" for hierarchy "simple_procext:pe1|BCD_tickfsm:b1" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_extension.v Line: 293
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "simple_procext:pe1|ALU:controlALU|Mult0" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 129
+Info (12130): Elaborated megafunction instantiation "simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0" File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 129
+Info (12133): Instantiated megafunction "simple_procext:pe1|ALU:controlALU|lpm_mult:Mult0" with the following parameter: File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components.v Line: 129
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_tns.tdf
+    Info (12023): Found entity 1: mult_tns File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/db/mult_tns.tdf Line: 28
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1275 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 1203 logic cells
+    Info (21062): Implemented 2 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4852 megabytes
+    Info: Processing ended: Thu Oct 08 14:48:17 2026
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:34
+
+

@@ -17,6 +17,6 @@ assign X[3] = (~A & ~B & ~C & D)|(B & ~C & ~D)|(B & C & D);
 assign X[4] = (~C|D)&(B|D);
 assign X[5] = (C & D)|(~A & ~B & C)|(~A & ~B & D); 
 assign X[6] = (~A & ~B & ~C)|(B & C & D);
-assign X[7] = neg;
+assign X[7] = ~neg; // Decimal points are active-low on the DE10-Lite.
 
 endmodule

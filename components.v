@@ -113,6 +113,9 @@ module ALU (input_a, input_b, alu_op, result);
     integer i;
 
     always @(*) begin
+        s = 18'd0;
+        ve = 4'd0;
+        i = 0;
 
         case (alu_op)
 
@@ -134,10 +137,10 @@ module ALU (input_a, input_b, alu_op, result);
 							
 							Get the legal index bounds for shifting (15 - s)
 							*/
-                    s = $signed(input_a) * -1;
+                    s = {2'b00, ~input_a} + 18'd1;
 
                     if (s < 16) begin
-                        ve = 15 - s;
+                        ve = 4'd15 - s[3:0];
 								
 								//Go Through all bits and move the current bit to the current bit + shift (e.g. bit 1 moves to bit 1+shift = 1+4 = bit 5
                         for (i=0; i<16; i=i+1) begin
@@ -157,7 +160,7 @@ module ALU (input_a, input_b, alu_op, result);
                 // Positive -> shift left
                 else begin
 
-                    s = $signed(input_a);
+                    s = {2'b00, input_a};
 
                     if (s < 16) begin
 

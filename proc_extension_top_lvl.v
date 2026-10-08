@@ -1,0 +1,43 @@
+module proc_extension_top_lvl(
+	 input [9:0] SW,
+	 input [1:0] KEY,
+	 output [9:0] LEDR,
+	 output [7:0] HEX5,
+	 output [7:0] HEX4,
+	 output [7:0] HEX3,
+	 output [7:0] HEX2,
+	 output [7:0] HEX1,
+	 output [7:0] HEX0
+	 );
+	 
+	 wire [3:0] tk;
+	 wire [15:0] bus;
+     wire [15:0] display_value;
+	 wire [6:0] hex5_inversion;
+	 
+	 simple_procext pe1(
+		 .din(SW[8:0]),
+		 .bus(bus),
+        .display(display_value),
+		 .clk(~KEY[1]),
+		 .rst(~KEY[0]),
+		 .tick(tk),
+		 .enable(SW[9]),
+		 .val5(hex5_inversion),
+		 .val4(HEX4),
+		 .val3(HEX3),
+		 .val2(HEX2),
+		 .val1(HEX1),
+		 .val0(HEX0)
+	 );
+	 
+	 
+
+	 
+	 
+	 assign LEDR = bus[9:0];
+	 assign HEX5 = ~hex5_inversion;
+	 
+endmodule 
+		 
+		 
