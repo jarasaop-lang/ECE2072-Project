@@ -1,0 +1,21 @@
+uart_top(
+	input [7:0] SW,
+	input KEY1,
+	input KEY0,
+	input CLOCK_50,
+	output LED0,
+	output LED1
+);
+	uart u1(
+	.data(SW),
+	.clk(CLOCK_50),
+	.start(KEY0),
+	.reset(KEY1),
+	.tx(LED0),
+	.busy(LED1)
+	);
+endmodule 
+	
+	
+	
+	
