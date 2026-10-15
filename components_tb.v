@@ -35,7 +35,7 @@ module components_tb;
 	//Register
 	parameter NR = 16, NIR = 9;
 	
-	reg [2:0] control_bits; //First bit = rst, second = r_in
+	reg [1:0] control_bits; //First bit = rst, second = r_in
 	
 	reg [NR-1:0] data_in_16;
 	wire [NR-1:0] Q_16;

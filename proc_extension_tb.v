@@ -458,7 +458,4 @@ module proc_extension_tb;
 	end
 
 endmodule
-<<<<<<< HEAD
 
-=======
->>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2

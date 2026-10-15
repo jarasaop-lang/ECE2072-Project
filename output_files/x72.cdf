@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/output_files/") File("x72.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/output_files/") File("x72.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
