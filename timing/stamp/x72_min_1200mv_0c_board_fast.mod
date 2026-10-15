@@ -22,18 +22,33 @@ MODEL
 */
 MODEL_VERSION "1.0";
 DESIGN "x72";
+<<<<<<< HEAD
 DATE "10/15/2026 21:29:36";
+=======
+DATE "10/15/2026 18:45:41";
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 PROGRAM "Quartus Prime";
 
 
 
 INPUT KEY[0];
 INPUT CLOCK_50;
+<<<<<<< HEAD
 INPUT SW[6];
+=======
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 INPUT KEY[1];
 INPUT SW[9];
 INPUT SW[7];
 INPUT SW[8];
+<<<<<<< HEAD
+=======
+INPUT SW[6];
+INPUT SW[5];
+INPUT SW[2];
+INPUT SW[0];
+INPUT SW[3];
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 INPUT SW[1];
 INPUT SW[4];
 INPUT SW[5];
@@ -186,6 +201,9 @@ pos_CLOCK_50__LEDR[6]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[6] ;
 pos_CLOCK_50__LEDR[7]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[7] ;
 pos_CLOCK_50__LEDR[8]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[8] ;
 pos_CLOCK_50__LEDR[9]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[9] ;
+<<<<<<< HEAD
 pos_CLOCK_50__TX__delay:		DELAY (POSEDGE) CLOCK_50 TX ;
+=======
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 
 ENDMODEL

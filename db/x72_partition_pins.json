@@ -244,6 +244,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
 					"name" : "SW[9]",
 					"strict" : false
 				},
@@ -288,10 +292,13 @@
 					"strict" : false
 				},
 				{
+<<<<<<< HEAD
 					"name" : "RX",
 					"strict" : false
 				},
 				{
+=======
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 					"name" : "KEY[1]",
 					"strict" : false
 				}

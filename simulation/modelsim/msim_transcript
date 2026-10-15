@@ -1,4 +1,4 @@
-# Reading C:/Users/tcolo/Downloads/Quartus_programs/modelsim_ae/tcl/vsim/pref.tcl
+# Reading C:/intelFPGA_lite/18.1/modelsim_ae/tcl/vsim/pref.tcl
 # do x72_run_msim_rtl_verilog.do
 # if {[file exists rtl_work]} {
 # 	vdel -lib rtl_work -all
@@ -7,22 +7,570 @@
 # vmap work rtl_work
 # Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
 # vmap work rtl_work 
-# Copying C:/Users/tcolo/Downloads/Quartus_programs/modelsim_ae/win32aloem/../modelsim.ini to modelsim.ini
+# Copying C:/intelFPGA_lite/18.1/modelsim_ae/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project {C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 18:37:25 on Sep 16,2026
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project" C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v 
-# -- Compiling module components_tb
-# ** Error: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v(23): (vlog-2730) Undefined variable: 'cnt'.
-# ** Error: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v(24): (vlog-2730) Undefined variable: 'err'.
-# ** Error (suppressible): C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v(30): (vlog-2388) 'cnt' already declared in this scope (components_tb).
-# ** Error (suppressible): C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/components_tb.v(30): (vlog-2388) 'err' already declared in this scope (components_tb).
-# End time: 18:37:25 on Sep 16,2026, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 0
-# ** Error: C:/Users/tcolo/Downloads/Quartus_programs/modelsim_ae/win32aloem/vlog failed.
-# Error in macro ./x72_run_msim_rtl_verilog.do line 8
-# C:/Users/tcolo/Downloads/Quartus_programs/modelsim_ae/win32aloem/vlog failed.
-#     while executing
-# "vlog -vlog01compat -work work +incdir+C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project {C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Proje..."
+# Start time: 21:11:22 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v 
+# -- Compiling module proc_extension_tb
+# 
+# Top level modules:
+# 	proc_extension_tb
+# End time: 21:11:22 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:22 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension.v 
+# -- Compiling module simple_procext
+# 
+# Top level modules:
+# 	simple_procext
+# End time: 21:11:22 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:22 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD_tickfsm.v 
+# -- Compiling module BCD_tickfsm
+# 
+# Top level modules:
+# 	BCD_tickfsm
+# End time: 21:11:22 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display_divide.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:22 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display_divide.v 
+# -- Compiling module display_divide
+# 
+# Top level modules:
+# 	display_divide
+# End time: 21:11:22 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:23 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/display.v 
+# -- Compiling module display
+# 
+# Top level modules:
+# 	display
+# End time: 21:11:23 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:23 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/BCD.v 
+# -- Compiling module BCD
+# 
+# Top level modules:
+# 	BCD
+# End time: 21:11:23 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:23 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v 
+# -- Compiling module sign_extend
+# -- Compiling module tick_FSM
+# -- Compiling module multiplexer
+# -- Compiling module ALU
+# -- Compiling module register_n
+# 
+# Top level modules:
+# 	sign_extend
+# 	tick_FSM
+# 	multiplexer
+# 	ALU
+# 	register_n
+# End time: 21:11:23 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/AND0036/OneDrive\ -\ Department\ of\ Education/Desktop/University/Year\ 2\ Semester\ 1/ECE2071/ECE2072-Project {C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:11:23 on Oct 15,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project" C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v 
+# -- Compiling module proc_extension_tb
+# 
+# Top level modules:
+# 	proc_extension_tb
+# End time: 21:11:23 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  proc_extension_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" proc_extension_tb 
+# Start time: 21:11:23 on Oct 15,2026
+# //  ModelSim - Intel FPGA Edition 10.5b Oct  5 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim - Intel FPGA Edition and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.proc_extension_tb
+# Loading work.simple_procext
+# Loading work.register_n
+# Loading work.sign_extend
+# Loading work.multiplexer
+# Loading work.ALU
+# Loading work.tick_FSM
+# Loading work.display
+# Loading work.display_divide
+# Loading lpm_ver.lpm_divide
+# Loading lpm_ver.LPM_HINT_EVALUATION
+# Loading work.BCD
+# Loading work.BCD_tickfsm
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000011111111, Register Actual = 0000000011111111
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 255: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 255: Selected Register: 1 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 1111111100000000, Register Actual = 1111111100000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 256: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 256: Selected Register: 1 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 511: Selected Register: 1 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate =   5: Selected Register: 2 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000001001, Register Actual = 0000000000001001
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   9: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate =   9: Selected Register: 3 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 1111111111111100, Register Actual = 1111111111111100
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000001001, Register Actual = 0000000000001001
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1 Display: opcode = 3, RY = 3: Selected RX Register: 2 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 1111111111111100, Register Actual = 1111111111111100
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 3: Selected RX Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1 Display: opcode = 3, RY = 3: Selected RX Register: 3 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1: opcode = 3, RY = 2: Selected RX Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 1 Display: opcode = 3, RY = 2: Selected RX Register: 2 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 511: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 511: Selected Register: 4 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000001, Register Actual = 0000000000000001
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =   1: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate =   1: Selected Register: 4 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 1111111111111111, Register Actual = 1111111111111111
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000001, Register Actual = 0000000000000001
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  21: Selected Register: 0 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate =  21: Selected Register: 0 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000001, Register Actual = 0000000000000001
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate =  85: Selected Register: 1 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate =  85: Selected Register: 1 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000000001, Register Actual = 0000000000000001
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 149: Selected Register: 2 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 149: Selected Register: 2 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000000000001, Register Actual = 0000000000000001
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 213: Selected Register: 3 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 213: Selected Register: 3 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 277: Selected Register: 4 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 277: Selected Register: 4 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 341: Selected Register: 5 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 341: Selected Register: 5 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 2: opcode = 7, immediate = 405: Selected Register: 6 Register Expected = 0000000000000000, Register Actual = 0000000000000000
+# Pass Type 2 Display: opcode = 7, immediate = 405: Selected Register: 6 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 0000000000010101, Register Actual = 0000000000010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 2: opcode = 7, immediate = 469: Selected Register: 7 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 2 Display: opcode = 7, immediate = 469: Selected Register: 7 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 0000000001010101, Register Actual = 0000000001010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 1: Selected RX Register: 0 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 1: Selected RX Register: 0 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 0000000010010101, Register Actual = 0000000010010101
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 2: Selected RX Register: 1 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 2: Selected RX Register: 1 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 0000000011010101, Register Actual = 0000000011010101
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 3: Selected RX Register: 2 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 3: Selected RX Register: 2 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 1111111100010101, Register Actual = 1111111100010101
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 4: Selected RX Register: 3 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 4: Selected RX Register: 3 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 1111111101010101, Register Actual = 1111111101010101
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 5: Selected RX Register: 4 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 5: Selected RX Register: 4 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 1111111110010101, Register Actual = 1111111110010101
+# Pass Type 1: opcode = 1, RY = 6: Selected RX Register: 5 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 6: Selected RX Register: 5 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 1, RY = 7: Selected RX Register: 6 Register Expected = 1111111111010101, Register Actual = 1111111111010101
+# Pass Type 1 Display: opcode = 1, RY = 7: Selected RX Register: 6 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 1, RY = 0: Selected RX Register: 7 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 1, RY = 0: Selected RX Register: 7 Display Expected = 0000000000000000, Display Actual = 0000000000000000
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 1: Selected RX Register: 0 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 1: Selected RX Register: 0 Display Expected = 0000000001101010, Display Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 2: Selected RX Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 2: Selected RX Register: 1 Display Expected = 0000000011101010, Display Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 3: Selected RX Register: 2 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 3: Selected RX Register: 2 Display Expected = 0000000101101010, Display Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 4: Selected RX Register: 3 Display Expected = 1111111111101010, Display Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 4 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 5: Selected RX Register: 4 Display Expected = 1111111001101010, Display Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 6: Selected RX Register: 5 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 6: Selected RX Register: 5 Display Expected = 1111111011101010, Display Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 7: Selected RX Register: 6 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 7: Selected RX Register: 6 Display Expected = 1111111101101010, Display Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 0000000011101010, Register Actual = 0000000011101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 0: Selected RX Register: 7 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 0: Selected RX Register: 7 Display Expected = 0000000000111111, Display Actual = 0000000000111111
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 0000000000000111, Register Actual = 0000000000000111
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =   7: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =   7: Selected Register: 1 Display Expected = 0000000000111111, Display Actual = 0000000000111111
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 0000000000000111, Register Actual = 0000000000000111
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 5: Selected RX Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 5: Selected RX Register: 1 Display Expected = 0000000000000111, Display Actual = 0000000000000111
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 0000000000010100, Register Actual = 0000000000010100
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 1111111111101010, Register Actual = 1111111111101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =  20: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =  20: Selected Register: 1 Display Expected = 0000000000000111, Display Actual = 0000000000000111
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 0000000000010100, Register Actual = 0000000000010100
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate = 507: Selected Register: 3 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate = 507: Selected Register: 3 Display Expected = 0000000000000111, Display Actual = 0000000000000111
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000000010100, Register Actual = 0000000000010100
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 0, RY = 4: Selected RX Register: 3 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 0, RY = 4: Selected RX Register: 3 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 0000000000000011, Register Actual = 0000000000000011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =   3: Selected Register: 1 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 0000000000001100, Register Actual = 0000000000001100
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 5, immediate =   2: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 5, immediate =   2: Selected Register: 1 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 0000000001101010, Register Actual = 0000000001101010
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 0000000000000011, Register Actual = 0000000000000011
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 5, immediate = 510: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 5, immediate = 510: Selected Register: 1 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 0000000000000011, Register Actual = 0000000000000011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 0000000000000011, Register Actual = 0000000000000011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =   3: Selected Register: 0 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =   3: Selected Register: 0 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 0000000000000011, Register Actual = 0000000000000011
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =   5: Selected Register: 1 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =   5: Selected Register: 1 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 0000000000001111, Register Actual = 0000000000001111
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 0000000101101010, Register Actual = 0000000101101010
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 4, RY = 1: Selected RX Register: 0 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 4, RY = 1: Selected RX Register: 0 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 0000000000001111, Register Actual = 0000000000001111
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 1111111111111101, Register Actual = 1111111111111101
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 1111111111111011, Register Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate = 509: Selected Register: 2 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate = 509: Selected Register: 2 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 0000000000001111, Register Actual = 0000000000001111
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 1111111111111101, Register Actual = 1111111111111101
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 0000000000001100, Register Actual = 0000000000001100
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 2: opcode = 7, immediate =  12: Selected Register: 3 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 2 Display: opcode = 7, immediate =  12: Selected Register: 3 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 0000000000001111, Register Actual = 0000000000001111
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 0000000000000101, Register Actual = 0000000000000101
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 1111111111011100, Register Actual = 1111111111011100
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 0000000000001100, Register Actual = 0000000000001100
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 1111111001101010, Register Actual = 1111111001101010
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 1111111011101010, Register Actual = 1111111011101010
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 1111111101101010, Register Actual = 1111111101101010
+# Pass Type 1: opcode = 4, RY = 3: Selected RX Register: 2 Register Expected = 0000000000111111, Register Actual = 0000000000111111
+# Pass Type 1 Display: opcode = 4, RY = 3: Selected RX Register: 2 Display Expected = 1111111111111011, Display Actual = 1111111111111011
+# Success. No errors were detected in the Extended Processor. Extended Processor Statistics are: Errors =           0, Passes =      144434
+# ** Note: $stop    : C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v(457)
+#    Time: 641936 ns  Iteration: 0  Instance: /proc_extension_tb
+# Break in Module proc_extension_tb at C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_extension_tb.v line 457
+# End time: 21:16:04 on Oct 15,2026, Elapsed time: 0:04:41
+# Errors: 0, Warnings: 0

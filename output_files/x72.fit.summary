@@ -1,12 +1,21 @@
+<<<<<<< HEAD
 Fitter Status : Successful - Thu Oct 15 21:29:26 2026
+=======
+Fitter Status : Successful - Thu Oct 15 18:45:27 2026
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : x72
 Top-level Entity Name : proc_communication_top_lvl
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
+<<<<<<< HEAD
 Total logic elements : 1,324 / 49,760 ( 3 % )
     Total combinational functions : 1,261 / 49,760 ( 3 % )
+=======
+Total logic elements : 1,316 / 49,760 ( 3 % )
+    Total combinational functions : 1,263 / 49,760 ( 3 % )
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
     Dedicated logic registers : 339 / 49,760 ( < 1 % )
 Total registers : 339
 Total pins : 73 / 360 ( 20 % )

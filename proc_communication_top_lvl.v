@@ -13,8 +13,12 @@ module proc_communication_top_lvl(
 	 input [9:0] SW,
 	 input [1:0] KEY,
 	 input CLOCK_50,
+<<<<<<< HEAD
 	 input RX,
 	 output TX,
+=======
+	 inout [1:0] GPIO, 
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 	 output [9:0] LEDR,
 	 output [7:0] HEX5,
 	 output [7:0] HEX4,

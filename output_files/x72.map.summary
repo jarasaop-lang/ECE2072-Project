@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Thu Oct 15 21:29:12 2026
+=======
+Analysis & Elaboration Status : Successful - Thu Oct 15 21:16:19 2026
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : x72
-Top-level Entity Name : proc_communication_top_lvl
+Top-level Entity Name : proc_extension_tb
 Family : MAX 10
 Total logic elements : 1,425
     Total combinational functions : 1,260

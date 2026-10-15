@@ -1,12 +1,12 @@
 `timescale 1ns/1ns
 /*
 Monash University ECE2072: Assignment 
-This file contains a Verilog test bench to test the correctness of the processor.
+This file contains a Verilog test bench to test the correctness of the extended processor.
 
-Please enter your student ID:
+Please enter your student ID: 36138568
 
 */
-module proc_tb2;
+module proc_extension_tb;
     // TODO: Implement the logic of your testbench here
 	
 	wire [15:0] actual_registers [0:7];
@@ -20,10 +20,7 @@ module proc_tb2;
 	reg [8:0] din;
 	
  
-	
-	
-	
-	
+
 	
 	//instantiate the module here
 	simple_procext testing_processor(
@@ -34,17 +31,19 @@ module proc_tb2;
 		.rst(rst),
 		.clk(clk),
 		.tick(tick),
-		.din(din)
+		.din(din),
+		.display(actual_display)
 	);
 	
 
 	//initialise the shadow variables
 	reg [15:0] expected_registers [0:7];
+	reg [15:0] expected_display;
 	reg [8:0] immediate;
 	reg [15:0] sign_extended_immediate;
 	
 	//initialising the parameters
-	parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111;
+	parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111, DISP = 3'b000, SSI = 3'd5, MUL = 3'd4;
 	localparam R1 = 3'd1, R2 = 3'd2, R3 = 3'd3, R4 = 3'd4, R5 = 3'd5, R6 = 3'd6, R7 = 3'd7;
 	
 	
@@ -73,8 +72,11 @@ module proc_tb2;
 		
 				ADD: expected_registers[rx] = expected_registers[rx] + expected_registers[ry];
 				SUB: expected_registers[rx] = expected_registers[rx] - expected_registers[ry];
+				MUL: expected_registers[rx] = expected_registers[rx] * expected_registers[ry];
+				DISP: expected_display = expected_registers[rx];
+				
 				default: begin
-					$display("Fail, invalid OPCODE used: %d. Expected opcode = %d or %d", opcode,ADD, SUB);
+					$display("Fail Type 1: invalid OPCODE used: %d. Expected opcodes = %d, %d, %d, %d", opcode,ADD, SUB, MUL, DISP);
 				end
 				
 			endcase
@@ -122,9 +124,33 @@ module proc_tb2;
 					pass_count = pass_count + 1;
 				end			
 			end
+			
+			
+			//Check for the Display vs Expected_delay register
+			if (expected_display !== actual_display) begin
+				$display("Fail Type 1 Display: opcode = %d, RY = %d: Selected RX Register: %d, Display Expected = %b, Display Actual = %b", opcode, ry, rx, expected_display, actual_display);
+				fail_count = fail_count + 1;
+			end else begin
+				if (accept_pass_messages) begin
+					$display("Pass Type 1 Display: opcode = %d, RY = %d: Selected RX Register: %d Display Expected = %b, Display Actual = %b", opcode, ry, rx, expected_display, actual_display);
+				end
+				pass_count = pass_count + 1;
+			end
+
 		end
 	
 	endtask
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	//logic for all type 2 instructions
@@ -141,7 +167,18 @@ module proc_tb2;
 			case(opcode)
 				MOVI: expected_registers[rx] = $signed(sign_extended_immediate);
 				ADDI: expected_registers[rx] = expected_registers[rx] + $signed(sign_extended_immediate);
-				default: ;
+				SSI: begin	
+							if(sign_extended_immediate[15]) begin 
+								expected_registers[rx] = expected_registers[rx] >> $signed(sign_extended_immediate) * -1;
+							end 
+							else begin
+								expected_registers[rx] = expected_registers[rx] << $signed(sign_extended_immediate);
+							end
+					  end
+							
+				default: begin
+					$display("Fail Type 2: invalid OPCODE used: %d. Expected opcodes = %d, %d, %d", opcode, MOVI, ADDI, SSI);
+				end
 				
 			endcase
 			
@@ -174,7 +211,7 @@ module proc_tb2;
 			//register checks --> cycle through all the registers 
 			for (type_2_i = 0; type_2_i < 8; type_2_i = type_2_i + 1) begin
 				if (expected_registers[type_2_i] !== actual_registers[type_2_i]) begin
-					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i] );
+					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
 					fail_count = fail_count + 1;
 				end
 					
@@ -185,20 +222,45 @@ module proc_tb2;
 					end
 					pass_count = pass_count + 1;
 				end			
+			end
 			
+			//Check for the Display vs Expected_delay register
+			if (expected_display !== actual_display) begin
+				$display("Fail Type 2 Display: opcode = %d, immediate = %d: Selected Register: %d Display Expected = %b, Display Actual = %b", opcode, immediate, rx, expected_display, actual_display);
+				fail_count = fail_count + 1;
+			end else begin
+				if (accept_pass_messages) begin
+					$display("Pass Type 2 Display: opcode = %d, immediate = %d: Selected Register: %d Display Expected = %b, Display Actual = %b", opcode, immediate, rx, expected_display, actual_display);
+				end
+				pass_count = pass_count + 1;
 			end
 		end
 	
 	endtask
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//logic for all the edge cases
 	task edge_cases;
 	
 		integer edge_iterator;
 		
 		begin
 			accept_pass_messages = 1;
-			// directed edge cases
+			
+			
+			//DIRECTED EDGE 
 			
 			//testing that the boundaries are 16 bits
 			type_2_instructions(MOVI, R1, 9'h0FF); //testing 0 extension
@@ -237,16 +299,71 @@ module proc_tb2;
 			
 			end
 			
+			
+			
+			//DISPLAY EDGE CASES/CHECKS
+			
+			//sweep to check expected_delay = actual_delay for every register; also checking RY is ignored 
+			for (edge_iterator = 0; edge_iterator < 8; edge_iterator = edge_iterator + 1) begin
+				type_1_instructions(DISP, edge_iterator[2:0], edge_iterator[2:0] + 3'b1);
+			end
+			
+			
+			//explicit check Display doesnt get changed after the register value changes: move 7 into R1, display R1, move 20 into R1  
+			type_2_instructions(MOVI, 3'd1, 9'd7);
+			type_1_instructions(DISP, 3'd1, 3'd5);
+			type_2_instructions(MOVI, 3'd1, 9'd20);
+			
+			//check a negative value is displayed correctly and - again - a non-zero RY
+			type_2_instructions(MOVI, 3'd3, -9'd5);
+			type_1_instructions(DISP, 3'd3, 3'd4); //should display -5
+			
+			
+			
+			//SHIFT TESTS
+			
+			//check of a positive shift and a manual check that R1 is now 12 (3 shifted twice left is 12)
+			type_2_instructions(MOVI, 3'd1, 9'd3);
+			type_2_instructions(SSI, 3'd1, 9'd2);
+			if (actual_registers[1] !== 16'd12) begin
+				$display("Explicit Shift Test Fail: Chosen Register: %d, Expected Value: %d, Actual Value: %d", 3'd1, 16'd12, actual_registers[1]);
+				fail_count = fail_count + 1;
+			end
+			else begin
+				pass_count = pass_count + 1;
+			end
+			
+			//negative shift: value from go from 12 back to 3 
+			type_2_instructions(SSI, 3'd1, -9'd2);
+			
+			
+			
+			//MULTIPLCATION TESTS
+			
+			
+			//Explicit Multiplication Routing: output should yeild 3 * 5 = 15
+			type_2_instructions(MOVI, 3'd0, 9'd3);
+			type_2_instructions(MOVI, 3'd1, 9'd5);
+			type_1_instructions(MUL, 3'd0, 3'd1);
+			
+			
+			//Signed Multiplcation Test and a manual check that R2 is now -36; output should yeild -3*12 = -36
+			type_2_instructions(MOVI, 3'd2, -9'd3);
+			type_2_instructions(MOVI, 3'd3, 9'd12);
+			type_1_instructions(MUL, 3'd2, 3'd3);
+			if (actual_registers[2] !== -16'd36) begin
+				$display("Explicit Multiplication Test Fail: Chosen Register: %d, Expected Value: %d, Actual Value: %d", 3'd2, -16'd36, actual_registers[2]);
+				fail_count = fail_count + 1;
+			end
+			else begin
+				pass_count = pass_count + 1;
+			end
+			
+			
+			
 			//turning off pass messaging so we can validate failed attempts better
 			accept_pass_messages = 0;
 		end
-	
-	
-	
-	
-	
-	
-	
 	
 	endtask
 	
@@ -254,6 +371,16 @@ module proc_tb2;
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//Initialisation sections, running the edge cases and random seed sweep
 	
 	//starting the clock
 	always begin
@@ -272,10 +399,12 @@ module proc_tb2;
 	RY = 3'd0;
 	immediate = 9'd0;
 	accept_pass_messages = 0;
+	expected_display = 16'd0;
 	
 	
 	//resetting the simple processor
-	rst = 1;
+	rst = 1'd1;
+	enable = 1'd1;
 	@(posedge clk);
 	@(posedge clk); 
 	#1
@@ -302,24 +431,34 @@ module proc_tb2;
 		type_2_instructions(MOVI, RY, immediate);
 		type_1_instructions(ADD, RX, RY);
 		
-		//Adding another random value as an immediate 
+		//Adding another random value as an immediate; different immediates are used to test type 2 instructions
 		immediate = $random(seed);
 		
 		type_2_instructions(ADDI, RX, immediate);
 		type_1_instructions(SUB, RX, RY);
+		type_1_instructions(MUL, RX, RY);
+		type_1_instructions(DISP, RX, RY);
+		
+		//Setting a new immediate for the shift instruction
+		immediate = $random(seed);
+		type_2_instructions(SSI, RX, immediate);
+		
 	end
 	// synopsys translate_on
 	
 	//Summary of Cases
 	if (fail_count == 0) begin
-		$display("Success. No errors were detected in the Simple Processor");
+		$display("Success. No errors were detected in the Extended Processor. Extended Processor Statistics are: Errors = %d, Passes = %d", fail_count, pass_count);
 		end		
 	else begin
-		$display("Failure. Simple Processor Statistics are: Errors = %d, Passes = %d", fail_count, pass_count);
+		$display("Failure. Extended Processor Statistics are: Errors = %d, Passes = %d", fail_count, pass_count);
 	end	
 	
 	$stop;
 	end
 
 endmodule
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2

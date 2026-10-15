@@ -269,8 +269,12 @@ resulting in 1024 individual clock-cycle checks.
 					 3'b010: alu_exp = in_a - in_b;
 					 
 					 3'b011: 
-								if(in_a[15]) alu_exp = in_b >> $signed(in_a)*-1;
-								else alu_exp = in_b << $signed(in_a);
+								if(in_a[15]) begin 
+								alu_exp = in_b >> $signed(in_a)*-1;
+								end 
+								else begin
+								alu_exp = in_b << $signed(in_a);
+								end
 								
 					 default: alu_exp = 16'b0;
 				 endcase
