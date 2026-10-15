@@ -6,6 +6,8 @@ This file contains a Verilog test bench to test the correctness of the processor
 Please enter your student ID:
 
 */
+// Change test inputs on falling clock edges. Check results after rising clock edges.
+// Keep expected values for every register, including registers that should not change.
 module proc_tb2;
     // TODO: Implement the logic of your testbench here
 	
@@ -29,7 +31,8 @@ module proc_tb2;
 	simple_procext testing_processor(
 		.R0(actual_registers[0]), .R1(actual_registers[1]), .R2(actual_registers[2]), .R3(actual_registers[3]), .R4(actual_registers[4]), .R5(actual_registers[5]), .R6(actual_registers[6]), .R7(actual_registers[7]),
 		.val0(bcd_registers[0]), .val1(bcd_registers[1]), .val2(bcd_registers[2]), .val3(bcd_registers[3]), .val4(bcd_registers[4]), .val5(bcd_tick),
-		.enable(enable)
+		.enable(enable),
+        .display(actual_display),
 		.bus(bus),
 		.rst(rst),
 		.clk(clk),
@@ -128,6 +131,7 @@ module proc_tb2;
 	
 	
 	//logic for all type 2 instructions
+    // Put the instruction on din first, then replace it with the immediate number.
 	task type_2_instructions;
 		input [2:0] opcode;
 		input [2:0] rx;
@@ -221,7 +225,7 @@ module proc_tb2;
 			
 			//Testing a single wrap around instance (FFFF to 0000)
 			type_2_instructions(MOVI, R4, 9'h1FF);
-			type_2_instructions(MOVI, R4, 9'd1);
+			type_2_instructions(ADDI, R4, 9'd1);
 			
 
 			//final test for sweeps --> checking if Rin works for each register --> each value is checked against all registers to ensure it's working
@@ -267,6 +271,7 @@ module proc_tb2;
 	pass_count = 0;
 	fail_count = 0;
 	clk = 0;
+    enable = 1'b1;
 	seed = 4;
 	RX = 3'd0;
 	RY = 3'd0;
@@ -320,7 +325,5 @@ module proc_tb2;
 	
 	$stop;
 	end
-
-endmodule
 
 endmodule

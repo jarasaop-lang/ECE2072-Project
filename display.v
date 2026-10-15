@@ -1,3 +1,5 @@
+// Find the size of the number without its sign, then split it into five decimal digits.
+// Turn on the decimal points for negative numbers by driving them low.
 module display(H_out, val0, val1, val2, val3, val4);
 
 	 input [15:0] H_out;

@@ -15,6 +15,7 @@ module sign_extend(in, ext);
 	output [15:0] ext;
 	
 	// TODO: implement logic
+    // Copy the nine-bit sign into the upper seven bits to preserve its signed value.
 	assign ext = {{7{in[8]}}, {in}};
 	
 endmodule
@@ -35,10 +36,10 @@ module tick_FSM(rst, clk, enable, tick);
 	
     // TODO: implement FSM
 	 
-	 parameter t1 = 4'b0001;
+	 parameter T1 = 4'b0001;
 	 
 	 always @(posedge clk) begin
-		 if (rst) tick <= t1;
+		 if (rst) tick <= T1;
 		 
 		 else if (enable) begin
 			 // takes the MSB and moves it to the LSB
@@ -49,6 +50,7 @@ module tick_FSM(rst, clk, enable, tick);
 			 
 endmodule
 
+// Select codes 0-7 read R0-R7; 8 reads G; 9 reads the sign-extended input.
 module multiplexer(SignExtDin, R0, R1, R2, R3, R4, R5, R6, R7, G, sel, Bus);
 	/* 
 	 * This module takes 10 inputs and places the correct input onto the bus.
@@ -91,6 +93,9 @@ module multiplexer(SignExtDin, R0, R1, R2, R3, R4, R5, R6, R7, G, sel, Bus);
 endmodule
 
 
+// A and B are the input numbers. alu_op chooses the calculation.
+// Keep the lower 16 bits of the answer. For shifts, A is the shift amount and B is the number.
+// Negative amounts shift right and fill with zeros. Shifting 16 or more places gives zero.
 module ALU (input_a, input_b, alu_op, result);
 	/* 
 	 * This module implements the arithmetic logic unit of the processor.
@@ -103,10 +108,10 @@ module ALU (input_a, input_b, alu_op, result);
     output reg [15:0] result;
 
 	// TODO: Implement ALU Logic:
-    parameter add = 3'b001,
-              sub = 3'b010,
-              mul = 3'b000,
-              ss  = 3'b011;
+    parameter ADD = 3'b001,
+              SUB = 3'b010,
+              MUL = 3'b000,
+              SS  = 3'b011;
 
     reg [17:0] s;
     reg [3:0] ve;
@@ -119,16 +124,16 @@ module ALU (input_a, input_b, alu_op, result);
 
         case (alu_op)
 
-            add:
+            ADD:
                 result = input_a + input_b;
 
-            sub:
+            SUB:
                 result = input_a - input_b;
 
-            mul:
+            MUL:
                 result = input_a * input_b;
 
-            ss: begin
+            SS: begin
 
                 // Negative -> shift right
                 if (input_a[15]) begin
@@ -187,6 +192,7 @@ module ALU (input_a, input_b, alu_op, result);
 endmodule
 
 
+// At a rising clock edge, reset first; otherwise load if r_in is high, or keep the old value.
 module register_n(data_in, r_in, clk, Q, rst);
 	
 

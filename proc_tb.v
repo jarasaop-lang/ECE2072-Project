@@ -6,6 +6,8 @@ This file contains a Verilog test bench to test the correctness of the processor
 Please enter your student ID:
 
 */
+// Change test inputs on falling clock edges. Check results after rising clock edges.
+// Keep expected values for every register, including registers that should not change.
 module proc_tb;
 	
 	wire [15:0] actual_registers [0:7];
@@ -120,6 +122,7 @@ module proc_tb;
 	
 	
 	//logic for all type 2 instructions
+    // Put the instruction on din first, then replace it with the immediate number.
 	task type_2_instructions;
 		input [2:0] opcode;
 		input [2:0] rx;
@@ -213,7 +216,7 @@ module proc_tb;
 			
 			//Testing a single wrap around instance (FFFF to 0000)
 			type_2_instructions(MOVI, R4, 9'h1FF);
-			type_2_instructions(MOVI, R4, 9'd1);
+			type_2_instructions(ADDI, R4, 9'd1);
 			
 
 			//final test for sweeps --> checking if Rin works for each register --> each value is checked against all registers to ensure it's working

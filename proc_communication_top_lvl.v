@@ -1,3 +1,5 @@
+// Board wiring: KEY0 resets, KEY1 steps, SW9 enables, and SW8:0 supply instruction/data.
+// GPIO[1] transmits and GPIO[0] receives; both UART modules use CLOCK_50.
 module proc_communication_top_lvl(
 	 input [9:0] SW,
 	 input [1:0] KEY,
@@ -16,18 +18,32 @@ module proc_communication_top_lvl(
 	 wire [15:0] bus;
      wire [15:0] display_value;
 	 wire [6:0] hex5_inversion;
+
 	 
+    // Synchronize physical switches and reset into the sole clock domain.
+    // Set all instruction/data switches before pressing the step button.
+    
+    reg [9:0] sw_meta, sw_sync;
+    
+    reg reset_meta, reset_sync;
+    always @(posedge CLOCK_50) begin
+        sw_meta <= SW;
+        sw_sync <= sw_meta;
+        reset_meta <= ~KEY[0];
+        reset_sync <= reset_meta;
+    end
+
 	 simple_proc_communication pe1(
-		 .din(SW[8:0]),
+		 .din(sw_sync[8:0]),
 		 .bus(bus),
 		 .clk_50(CLOCK_50),
 		 .RXin(GPIO[0]),
 		 .tx(GPIO[1]),
         .display(display_value),
 		 .clk(~KEY[1]),
-		 .rst(~KEY[0]),
+		 .rst(reset_sync),
 		 .tick(tk),
-		 .enable(SW[9]),
+		 .enable(sw_sync[9]),
 		 .val5(hex5_inversion),
 		 .val4(HEX4),
 		 .val3(HEX3),
@@ -40,8 +56,10 @@ module proc_communication_top_lvl(
 
 	 
 	 
+    // LEDs show the current bus, not a permanently selected register.
+    // A 0 lights a display segment. HEX5 shows the tick; its dot shows the number sign.
 	 assign LEDR = bus[9:0];
-	 assign HEX5 = ~hex5_inversion;
+	 assign HEX5 = {~display_value[15], ~hex5_inversion};
 	 
 endmodule 
 		 

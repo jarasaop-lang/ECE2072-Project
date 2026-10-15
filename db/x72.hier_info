@@ -1,9 +1,3 @@
-|proc_tb
-
-
-|proc_tb|simple_proc:testing_processor
-clk => clk.IN12
-rst => rst.IN12
 |proc_communication_top_lvl
 SW[0] => SW[0].IN1
 SW[1] => SW[1].IN1
@@ -20,64 +14,64 @@ KEY[1] => _.IN1
 CLOCK_50 => CLOCK_50.IN1
 GPIO[0] <> simple_proc_communication:pe1.RXin
 GPIO[1] <> simple_proc_communication:pe1.tx
-LEDR[0] << simple_proc_communication:pe1.bus
-LEDR[1] << simple_proc_communication:pe1.bus
-LEDR[2] << simple_proc_communication:pe1.bus
-LEDR[3] << simple_proc_communication:pe1.bus
-LEDR[4] << simple_proc_communication:pe1.bus
-LEDR[5] << simple_proc_communication:pe1.bus
-LEDR[6] << simple_proc_communication:pe1.bus
-LEDR[7] << simple_proc_communication:pe1.bus
-LEDR[8] << simple_proc_communication:pe1.bus
-LEDR[9] << simple_proc_communication:pe1.bus
-HEX5[0] << simple_proc_communication:pe1.val5
-HEX5[1] << simple_proc_communication:pe1.val5
-HEX5[2] << simple_proc_communication:pe1.val5
-HEX5[3] << simple_proc_communication:pe1.val5
-HEX5[4] << simple_proc_communication:pe1.val5
-HEX5[5] << simple_proc_communication:pe1.val5
-HEX5[6] << simple_proc_communication:pe1.val5
-HEX5[7] << <VCC>
-HEX4[0] << simple_proc_communication:pe1.val4
-HEX4[1] << simple_proc_communication:pe1.val4
-HEX4[2] << simple_proc_communication:pe1.val4
-HEX4[3] << simple_proc_communication:pe1.val4
-HEX4[4] << simple_proc_communication:pe1.val4
-HEX4[5] << simple_proc_communication:pe1.val4
-HEX4[6] << simple_proc_communication:pe1.val4
-HEX4[7] << simple_proc_communication:pe1.val4
-HEX3[0] << simple_proc_communication:pe1.val3
-HEX3[1] << simple_proc_communication:pe1.val3
-HEX3[2] << simple_proc_communication:pe1.val3
-HEX3[3] << simple_proc_communication:pe1.val3
-HEX3[4] << simple_proc_communication:pe1.val3
-HEX3[5] << simple_proc_communication:pe1.val3
-HEX3[6] << simple_proc_communication:pe1.val3
-HEX3[7] << simple_proc_communication:pe1.val3
-HEX2[0] << simple_proc_communication:pe1.val2
-HEX2[1] << simple_proc_communication:pe1.val2
-HEX2[2] << simple_proc_communication:pe1.val2
-HEX2[3] << simple_proc_communication:pe1.val2
-HEX2[4] << simple_proc_communication:pe1.val2
-HEX2[5] << simple_proc_communication:pe1.val2
-HEX2[6] << simple_proc_communication:pe1.val2
-HEX2[7] << simple_proc_communication:pe1.val2
-HEX1[0] << simple_proc_communication:pe1.val1
-HEX1[1] << simple_proc_communication:pe1.val1
-HEX1[2] << simple_proc_communication:pe1.val1
-HEX1[3] << simple_proc_communication:pe1.val1
-HEX1[4] << simple_proc_communication:pe1.val1
-HEX1[5] << simple_proc_communication:pe1.val1
-HEX1[6] << simple_proc_communication:pe1.val1
-HEX1[7] << simple_proc_communication:pe1.val1
-HEX0[0] << simple_proc_communication:pe1.val0
-HEX0[1] << simple_proc_communication:pe1.val0
-HEX0[2] << simple_proc_communication:pe1.val0
-HEX0[3] << simple_proc_communication:pe1.val0
-HEX0[4] << simple_proc_communication:pe1.val0
-HEX0[5] << simple_proc_communication:pe1.val0
-HEX0[6] << simple_proc_communication:pe1.val0
-HEX0[7] << simple_proc_communication:pe1.val0
+LEDR[0] <= simple_proc_communication:pe1.bus
+LEDR[1] <= simple_proc_communication:pe1.bus
+LEDR[2] <= simple_proc_communication:pe1.bus
+LEDR[3] <= simple_proc_communication:pe1.bus
+LEDR[4] <= simple_proc_communication:pe1.bus
+LEDR[5] <= simple_proc_communication:pe1.bus
+LEDR[6] <= simple_proc_communication:pe1.bus
+LEDR[7] <= simple_proc_communication:pe1.bus
+LEDR[8] <= simple_proc_communication:pe1.bus
+LEDR[9] <= simple_proc_communication:pe1.bus
+HEX5[0] <= simple_proc_communication:pe1.val5
+HEX5[1] <= simple_proc_communication:pe1.val5
+HEX5[2] <= simple_proc_communication:pe1.val5
+HEX5[3] <= simple_proc_communication:pe1.val5
+HEX5[4] <= simple_proc_communication:pe1.val5
+HEX5[5] <= simple_proc_communication:pe1.val5
+HEX5[6] <= simple_proc_communication:pe1.val5
+HEX5[7] <= <VCC>
+HEX4[0] <= simple_proc_communication:pe1.val4
+HEX4[1] <= simple_proc_communication:pe1.val4
+HEX4[2] <= simple_proc_communication:pe1.val4
+HEX4[3] <= simple_proc_communication:pe1.val4
+HEX4[4] <= simple_proc_communication:pe1.val4
+HEX4[5] <= simple_proc_communication:pe1.val4
+HEX4[6] <= simple_proc_communication:pe1.val4
+HEX4[7] <= simple_proc_communication:pe1.val4
+HEX3[0] <= simple_proc_communication:pe1.val3
+HEX3[1] <= simple_proc_communication:pe1.val3
+HEX3[2] <= simple_proc_communication:pe1.val3
+HEX3[3] <= simple_proc_communication:pe1.val3
+HEX3[4] <= simple_proc_communication:pe1.val3
+HEX3[5] <= simple_proc_communication:pe1.val3
+HEX3[6] <= simple_proc_communication:pe1.val3
+HEX3[7] <= simple_proc_communication:pe1.val3
+HEX2[0] <= simple_proc_communication:pe1.val2
+HEX2[1] <= simple_proc_communication:pe1.val2
+HEX2[2] <= simple_proc_communication:pe1.val2
+HEX2[3] <= simple_proc_communication:pe1.val2
+HEX2[4] <= simple_proc_communication:pe1.val2
+HEX2[5] <= simple_proc_communication:pe1.val2
+HEX2[6] <= simple_proc_communication:pe1.val2
+HEX2[7] <= simple_proc_communication:pe1.val2
+HEX1[0] <= simple_proc_communication:pe1.val1
+HEX1[1] <= simple_proc_communication:pe1.val1
+HEX1[2] <= simple_proc_communication:pe1.val1
+HEX1[3] <= simple_proc_communication:pe1.val1
+HEX1[4] <= simple_proc_communication:pe1.val1
+HEX1[5] <= simple_proc_communication:pe1.val1
+HEX1[6] <= simple_proc_communication:pe1.val1
+HEX1[7] <= simple_proc_communication:pe1.val1
+HEX0[0] <= simple_proc_communication:pe1.val0
+HEX0[1] <= simple_proc_communication:pe1.val0
+HEX0[2] <= simple_proc_communication:pe1.val0
+HEX0[3] <= simple_proc_communication:pe1.val0
+HEX0[4] <= simple_proc_communication:pe1.val0
+HEX0[5] <= simple_proc_communication:pe1.val0
+HEX0[6] <= simple_proc_communication:pe1.val0
+HEX0[7] <= simple_proc_communication:pe1.val0
 
 
 |proc_communication_top_lvl|simple_proc_communication:pe1
@@ -237,13 +231,6 @@ R7[12] <= R7[12].DB_MAX_OUTPUT_PORT_TYPE
 R7[13] <= R7[13].DB_MAX_OUTPUT_PORT_TYPE
 R7[14] <= R7[14].DB_MAX_OUTPUT_PORT_TYPE
 R7[15] <= R7[15].DB_MAX_OUTPUT_PORT_TYPE
-tick[0] <= tick_FSM:tick1.tick
-tick[1] <= tick_FSM:tick1.tick
-tick[2] <= tick_FSM:tick1.tick
-tick[3] <= tick_FSM:tick1.tick
-
-
-|proc_tb|simple_proc:testing_processor|register_n:R0_reg
 val0[0] <= display:dis1.val0
 val0[1] <= display:dis1.val0
 val0[2] <= display:dis1.val0
@@ -418,7 +405,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R1_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R1_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -502,7 +488,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R2_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R2_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -586,7 +571,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R3_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R3_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -670,7 +654,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R4_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R4_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -754,7 +737,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R5_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R5_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -838,7 +820,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R6_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:R6_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -922,7 +903,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:R7_reg
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:A
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -1006,7 +986,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:A
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:G
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -1090,7 +1069,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:G
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:H
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -1174,7 +1152,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|register_n:IR
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:IR
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -1223,7 +1200,6 @@ rst => Q.OUTPUTSELECT
 rst => Q.OUTPUTSELECT
 
 
-|proc_tb|simple_proc:testing_processor|sign_extend:s1
 |proc_communication_top_lvl|simple_proc_communication:pe1|register_n:TX_reg
 data_in[0] => Q.DATAB
 data_in[1] => Q.DATAB
@@ -1342,7 +1318,6 @@ ext[14] <= in[8].DB_MAX_OUTPUT_PORT_TYPE
 ext[15] <= in[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|proc_tb|simple_proc:testing_processor|multiplexer:controlmult
 |proc_communication_top_lvl|simple_proc_communication:pe1|multiplexer:controlmult
 SignExtDin[0] => Mux15.IN15
 SignExtDin[1] => Mux14.IN15
@@ -1586,7 +1561,6 @@ Bus[14] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 Bus[15] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|proc_tb|simple_proc:testing_processor|ALU:controlALU
 |proc_communication_top_lvl|simple_proc_communication:pe1|ALU:controlALU
 input_a[0] => Add0.IN16
 input_a[0] => Add1.IN32
@@ -2810,7 +2784,6 @@ result[14] <= Mux33.DB_MAX_OUTPUT_PORT_TYPE
 result[15] <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|proc_tb|simple_proc:testing_processor|tick_FSM:tick1
 |proc_communication_top_lvl|simple_proc_communication:pe1|tick_FSM_uart:tick1
 rst => button_meta.OUTPUTSELECT
 rst => button_sync.OUTPUTSELECT
