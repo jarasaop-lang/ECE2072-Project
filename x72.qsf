@@ -38,6 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX 10"
 set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY proc_tb
 set_global_assignment -name TOP_LEVEL_ENTITY proc_communication_top_lvl
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:41:10  SEPTEMBER 09, 2026"

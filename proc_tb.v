@@ -71,12 +71,14 @@ module proc_tb;
 				
 			endcase
 			
+			
 			//tick 1
 			@(negedge clk);
 			din = {opcode, rx, ry};
 			@(posedge clk);
 					
 			//tick 2 
+			// synopsys translate_off
 			@(negedge clk);
 			din = $random(seed);
 			@(posedge clk);
@@ -89,7 +91,9 @@ module proc_tb;
 			//tick 4
 			@(negedge clk);
 			din = $random(seed);
+			// synopsys translate_on
 			@(posedge clk);
+			
 			
 			#1;
 			
@@ -133,6 +137,7 @@ module proc_tb;
 				
 			endcase
 			
+			
 			//tick 1
 			@(negedge clk);
 			din = {opcode, rx, 3'b000};
@@ -144,6 +149,7 @@ module proc_tb;
 			@(posedge clk);
 					
 			//tick 3, loading junk values for din
+			// synopsys translate_off
 			@(negedge clk);
 			din = $random(seed);
 			@(posedge clk);
@@ -151,7 +157,9 @@ module proc_tb;
 			//tick 4
 			@(negedge clk);
 			din = $random(seed);
+			// synopsys translate_on
 			@(posedge clk);
+			
 			
 			#1;
 			
@@ -274,7 +282,7 @@ module proc_tb;
 	
 	edge_cases();
 	
-	
+	// synopsys translate_off
 	for (iterator = 0; iterator < 2000; iterator = iterator  + 1) begin
 		RX = $random(seed);
 		RY = $random(seed);
@@ -288,10 +296,11 @@ module proc_tb;
 		
 		//Adding another random value as an immediate 
 		immediate = $random(seed);
+		
 		type_2_instructions(ADDI, RX, immediate);
 		type_1_instructions(SUB, RX, RY);
 	end
-	
+	// synopsys translate_on
 	
 	//Summary of Cases
 	if (fail_count == 0) begin

@@ -14,7 +14,7 @@ module display(H_out, val0, val1, val2, val3, val4);
 
 	 assign magnitude  = (H_out[15]) ? (~H_out + 1'b1) : H_out;
 	 
-	 
+	 //dividing by 10 to get the lowest number each time; carry the quoitent to the next divide and repeat
 	 display_divide h0(
 		 .numer(magnitude[15:0]),
 		 .denom(16'd10),
@@ -80,7 +80,8 @@ module display(H_out, val0, val1, val2, val3, val4);
 		 .neg(H_out[15]),
 		 .X(seg4)
 		 );
-	
+		
+	 //H_out is the MSB, if one, invert because the DE10 is active-low
 	 assign val0 = {~H_out[15], seg0[6:0]};
 	 assign val1 = {~H_out[15], seg1[6:0]};
 	 assign val2 = {~H_out[15], seg2[6:0]};
