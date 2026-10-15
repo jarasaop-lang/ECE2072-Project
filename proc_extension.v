@@ -46,8 +46,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, 
 	 
 	 
 	 wire [15:0] G_out, A_out, H_out, ALU_result, SignExtDin;
-     assign disp = H_out;
-     assign display = disp;
+     assign display = H_out;
 
 	 wire [8:0] IR_out;
 	 
@@ -188,21 +187,21 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, 
 
 					 
 					 case(opcode)
-						ADD, SUB, MUL: begin
+						ADD, SUB, MUL: begin //getting RX value on bus and storing in A
 							Ain = 1;
 							select = RX;
 							end
 							
-						MOVI: begin
+						MOVI: begin //Putting Immediate straight into RX register
 							select = SEL_DIN;
 							Rin[RX] = 1'b1;
 							end
-						ADDI, SSI: begin
+						ADDI, SSI: begin //getting immediate value and storing in A
 							Ain = 1;
 							select = SEL_DIN;
 						end
 						
-						DISP: begin
+						DISP: begin //RX value clocked into HEX/H register
 							Hin = 1;
 							select = RX;
 						end
@@ -239,7 +238,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, 
 							select = RX;
 							ALUop = 3'b001;
 						end
-						SSI: begin
+						SSI: begin //RX value placed onto the bus, shifted and placed in G register
 							Gin=1;
 							select = RX;
 							ALUop = 3'd3;
@@ -254,7 +253,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, 
                 begin
                 
 					 case(opcode)
-						ADD, SUB, ADDI, MUL, SSI: begin
+						ADD, SUB, ADDI, MUL, SSI: begin //Putting G register value in RX
 							select = SEL_G;
 							Rin[RX] = 1'b1;
 							end
@@ -280,7 +279,7 @@ module simple_procext(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, 
 		  //Display functionality
 		  
 		  display dis1(
-				.H_out(disp),
+				.H_out(H_out),
 				.val0(val0),
 				.val1(val1),
 				.val2(val2),
