@@ -1,5 +1,5 @@
 Flow report for x72
-Thu Oct 15 21:16:19 2026
+Thu Oct 15 21:54:14 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,10 +40,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Oct 15 21:16:19 2026       ;
+; Flow Status                        ; Successful - Thu Oct 15 21:54:14 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; x72                                         ;
-; Top-level Entity Name              ; proc_extension_tb                           ;
+; Top-level Entity Name              ; components_tb                               ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
@@ -66,50 +66,50 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/15/2026 21:16:10 ;
+; Start date & time ; 10/15/2026 21:53:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; x72                 ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                            ;
-+--------------------------------------+----------------------------------------+---------------+-------------------+-------------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name       ; Section Id              ;
-+--------------------------------------+----------------------------------------+---------------+-------------------+-------------------------+
-; COMPILER_SIGNATURE_ID                ; 2543711158273.179205937007440          ; --            ; --                ; --                      ;
-; EDA_BOARD_DESIGN_TIMING_TOOL         ; Stamp (Timing)                         ; <None>        ; --                ; --                      ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                ; proc_extension_tb       ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                ; components_tb           ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                ; proc_tb                 ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; proc_extension_tb                      ; --            ; --                ; eda_simulation          ;
-; EDA_OUTPUT_DATA_FORMAT               ; Stamp                                  ; --            ; --                ; eda_board_design_timing ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --                ; eda_simulation          ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --                ; --                      ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --                ; eda_simulation          ;
-; EDA_TEST_BENCH_FILE                  ; proc_extension_tb.v                    ; --            ; --                ; proc_extension_tb       ;
-; EDA_TEST_BENCH_FILE                  ; components_tb.v                        ; --            ; --                ; components_tb           ;
-; EDA_TEST_BENCH_FILE                  ; proc_tb.v                              ; --            ; --                ; proc_tb                 ;
-; EDA_TEST_BENCH_FILE                  ; components.v                           ; --            ; --                ; proc_tb                 ;
-; EDA_TEST_BENCH_FILE                  ; proc.v                                 ; --            ; --                ; proc_tb                 ;
-; EDA_TEST_BENCH_MODULE_NAME           ; proc_extension_tb                      ; --            ; --                ; proc_extension_tb       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; components_tb                          ; --            ; --                ; components_tb           ;
-; EDA_TEST_BENCH_MODULE_NAME           ; proc_tb                                ; --            ; --                ; proc_tb                 ;
-; EDA_TEST_BENCH_NAME                  ; components_tb                          ; --            ; --                ; eda_simulation          ;
-; EDA_TEST_BENCH_NAME                  ; proc_tb                                ; --            ; --                ; eda_simulation          ;
-; EDA_TEST_BENCH_NAME                  ; proc_extension_tb                      ; --            ; --                ; eda_simulation          ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --                ; eda_simulation          ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --                ; --                      ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --                ; --                      ;
-; MISC_FILE                            ; display_divide_bb.v                    ; --            ; --                ; --                      ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; proc_extension_tb ; Top                     ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; proc_extension_tb ; Top                     ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; proc_extension_tb ; Top                     ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --                ; --                      ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                ; --                      ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --                ; --                      ;
-; TOP_LEVEL_ENTITY                     ; proc_extension_tb                      ; x72           ; --                ; --                      ;
-+--------------------------------------+----------------------------------------+---------------+-------------------+-------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                        ;
++--------------------------------------+----------------------------------------+---------------+---------------+-------------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name   ; Section Id              ;
++--------------------------------------+----------------------------------------+---------------+---------------+-------------------------+
+; COMPILER_SIGNATURE_ID                ; 2543711158273.179206159421784          ; --            ; --            ; --                      ;
+; EDA_BOARD_DESIGN_TIMING_TOOL         ; Stamp (Timing)                         ; <None>        ; --            ; --                      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; proc_extension_tb       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; components_tb           ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; proc_tb                 ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; proc_extension_tb                      ; --            ; --            ; eda_simulation          ;
+; EDA_OUTPUT_DATA_FORMAT               ; Stamp                                  ; --            ; --            ; eda_board_design_timing ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --            ; eda_simulation          ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --            ; --                      ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --            ; eda_simulation          ;
+; EDA_TEST_BENCH_FILE                  ; proc_extension_tb.v                    ; --            ; --            ; proc_extension_tb       ;
+; EDA_TEST_BENCH_FILE                  ; components_tb.v                        ; --            ; --            ; components_tb           ;
+; EDA_TEST_BENCH_FILE                  ; proc_tb.v                              ; --            ; --            ; proc_tb                 ;
+; EDA_TEST_BENCH_FILE                  ; components.v                           ; --            ; --            ; proc_tb                 ;
+; EDA_TEST_BENCH_FILE                  ; proc.v                                 ; --            ; --            ; proc_tb                 ;
+; EDA_TEST_BENCH_MODULE_NAME           ; proc_extension_tb                      ; --            ; --            ; proc_extension_tb       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; components_tb                          ; --            ; --            ; components_tb           ;
+; EDA_TEST_BENCH_MODULE_NAME           ; proc_tb                                ; --            ; --            ; proc_tb                 ;
+; EDA_TEST_BENCH_NAME                  ; components_tb                          ; --            ; --            ; eda_simulation          ;
+; EDA_TEST_BENCH_NAME                  ; proc_tb                                ; --            ; --            ; eda_simulation          ;
+; EDA_TEST_BENCH_NAME                  ; proc_extension_tb                      ; --            ; --            ; eda_simulation          ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --            ; eda_simulation          ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --            ; --                      ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --            ; --                      ;
+; MISC_FILE                            ; display_divide_bb.v                    ; --            ; --            ; --                      ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; components_tb ; Top                     ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; components_tb ; Top                     ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; components_tb ; Top                     ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --            ; --                      ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --            ; --                      ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --            ; --                      ;
+; TOP_LEVEL_ENTITY                     ; components_tb                          ; x72           ; --            ; --                      ;
++--------------------------------------+----------------------------------------+---------------+---------------+-------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -117,8 +117,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:10     ; 1.0                     ; 4748 MB             ; 00:00:18                           ;
-; Total                  ; 00:00:10     ; --                      ; --                  ; 00:00:18                           ;
+; Analysis & Elaboration ; 00:01:01     ; 1.0                     ; 4766 MB             ; 00:01:13                           ;
+; Total                  ; 00:01:01     ; --                      ; --                  ; 00:01:13                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
