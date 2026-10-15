@@ -40,11 +40,12 @@ module proc_tb2;
 
 	//initialise the shadow variables
 	reg [15:0] expected_registers [0:7];
+	reg [15:0] expected_display;
 	reg [8:0] immediate;
 	reg [15:0] sign_extended_immediate;
 	
 	//initialising the parameters
-	parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111;
+	parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111, DISP = 3'b000, SSI = 3'd5, MUL = 3'd4;
 	localparam R1 = 3'd1, R2 = 3'd2, R3 = 3'd3, R4 = 3'd4, R5 = 3'd5, R6 = 3'd6, R7 = 3'd7;
 	
 	
@@ -73,6 +74,9 @@ module proc_tb2;
 		
 				ADD: expected_registers[rx] = expected_registers[rx] + expected_registers[ry];
 				SUB: expected_registers[rx] = expected_registers[rx] - expected_registers[ry];
+				MUL: expected_registers[rx] = expected_registers[rx] * expected_registers[ry];
+				DISP: expected_display = expected_registers[rx];
+				
 				default: begin
 					$display("Fail, invalid OPCODE used: %d. Expected opcode = %d or %d", opcode,ADD, SUB);
 				end
@@ -141,6 +145,15 @@ module proc_tb2;
 			case(opcode)
 				MOVI: expected_registers[rx] = $signed(sign_extended_immediate);
 				ADDI: expected_registers[rx] = expected_registers[rx] + $signed(sign_extended_immediate);
+				SSI: begin	
+							if(sign_extended_immediate[15]) begin 
+								expected_registers[rx] = expected_registers[rx] >> $signed(sign_extended_immediate)*-1;
+							end 
+							else begin
+								expected_registers[rx] = expected_registers[rx] << $signed(sign_extended_immediate)*-1;
+							end
+					  end
+							
 				default: ;
 				
 			endcase
@@ -174,7 +187,7 @@ module proc_tb2;
 			//register checks --> cycle through all the registers 
 			for (type_2_i = 0; type_2_i < 8; type_2_i = type_2_i + 1) begin
 				if (expected_registers[type_2_i] !== actual_registers[type_2_i]) begin
-					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i] );
+					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
 					fail_count = fail_count + 1;
 				end
 					
@@ -185,8 +198,13 @@ module proc_tb2;
 					end
 					pass_count = pass_count + 1;
 				end			
-			
 			end
+			
+			//Check for the Display vs Expected_delay register
+			if (expected_display !== actual_display) begin
+				$display("Fail Type 2 Display: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+			end
+			
 		end
 	
 	endtask
@@ -272,6 +290,7 @@ module proc_tb2;
 	RY = 3'd0;
 	immediate = 9'd0;
 	accept_pass_messages = 0;
+	display = 16'd0;
 	
 	
 	//resetting the simple processor
@@ -302,11 +321,18 @@ module proc_tb2;
 		type_2_instructions(MOVI, RY, immediate);
 		type_1_instructions(ADD, RX, RY);
 		
-		//Adding another random value as an immediate 
+		//Adding another random value as an immediate; different immediates are used to test type 2 instructions
 		immediate = $random(seed);
 		
 		type_2_instructions(ADDI, RX, immediate);
 		type_1_instructions(SUB, RX, RY);
+		type_1_instructions(MUL, RX, RY);
+		type_1_instructions(DISP, RX, RY);
+		
+		//Setting a new immediate for the shift instruction
+		immediate = $random(seed);
+		type_2_instructions(SSI, RX, immediate);
+		
 	end
 	// synopsys translate_on
 	
@@ -320,7 +346,5 @@ module proc_tb2;
 	
 	$stop;
 	end
-
-endmodule
 
 endmodule

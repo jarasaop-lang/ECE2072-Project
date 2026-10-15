@@ -1,5 +1,5 @@
 Fitter report for x72
-Thu Oct 15 12:52:35 2026
+Thu Oct 15 13:17:44 2026
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -72,7 +72,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Oct 15 12:52:35 2026       ;
+; Fitter Status                      ; Successful - Thu Oct 15 13:17:44 2026       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; x72                                         ;
 ; Top-level Entity Name              ; proc_communication_top_lvl                  ;
@@ -155,22 +155,17 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.31        ;
-; Maximum used               ; 12          ;
+; Average used               ; 1.15        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.9%      ;
-;     Processor 3            ;   2.9%      ;
-;     Processor 4            ;   2.8%      ;
-;     Processor 5            ;   2.8%      ;
-;     Processor 6            ;   2.8%      ;
-;     Processor 7            ;   2.8%      ;
-;     Processor 8            ;   2.8%      ;
-;     Processors 9-12        ;   2.8%      ;
+;     Processor 2            ;   5.1%      ;
+;     Processor 3            ;   5.0%      ;
+;     Processor 4            ;   5.0%      ;
 +----------------------------+-------------+
 
 
@@ -488,7 +483,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/output_files/x72.pin.
+The pin-out file can be found in C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/output_files/x72.pin.
 
 
 +----------------------------------------------------------------------+
@@ -2082,7 +2077,7 @@ Note: This table only shows the top 15 path(s) that have the largest delay added
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (119006): Selected device 10M50DAF484C7G for design "x72"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2119,7 +2114,7 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node CLOCK_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 4
+Info (176353): Automatically promoted node CLOCK_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 4
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -2244,50 +2239,50 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:04
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 10% of the available device resources in the region that extends from location X45_Y44 to location X55_Y54
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
-Info (11888): Total time spent on timing analysis during the Fitter is 0.46 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
+Info (11888): Total time spent on timing analysis during the Fitter is 0.55 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 15 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at V10 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 5
-    Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at W10 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 5
-    Info (169178): Pin SW[9] uses I/O standard 3.3-V LVTTL at F15 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at C10 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at D12 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at C12 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[4] uses I/O standard 3.3-V LVTTL at A12 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[5] uses I/O standard 3.3-V LVTTL at B12 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[6] uses I/O standard 3.3-V LVTTL at A13 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[7] uses I/O standard 3.3-V LVTTL at A14 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin SW[8] uses I/O standard 3.3-V LVTTL at B14 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 2
-    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 3
-    Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 4
-    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 3
+    Info (169178): Pin GPIO[0] uses I/O standard 3.3-V LVTTL at V10 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 5
+    Info (169178): Pin GPIO[1] uses I/O standard 3.3-V LVTTL at W10 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 5
+    Info (169178): Pin SW[9] uses I/O standard 3.3-V LVTTL at F15 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at C10 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at D12 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at C12 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[4] uses I/O standard 3.3-V LVTTL at A12 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[5] uses I/O standard 3.3-V LVTTL at B12 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[6] uses I/O standard 3.3-V LVTTL at A13 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[7] uses I/O standard 3.3-V LVTTL at A14 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin SW[8] uses I/O standard 3.3-V LVTTL at B14 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 2
+    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 3
+    Info (169178): Pin CLOCK_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 4
+    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 3
 Warning (169064): Following 2 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 5
-    Info (169065): Pin GPIO[1] has a permanently enabled output enable File: C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/proc_communication_top_lvl.v Line: 5
-Info (144001): Generated suppressed messages file C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/output_files/x72.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 121 warnings
-    Info: Peak virtual memory: 6276 megabytes
-    Info: Processing ended: Thu Oct 15 12:52:36 2026
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:36
+    Info (169065): Pin GPIO[0] has a permanently disabled output enable File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 5
+    Info (169065): Pin GPIO[1] has a permanently enabled output enable File: C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/proc_communication_top_lvl.v Line: 5
+Info (144001): Generated suppressed messages file C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/output_files/x72.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 120 warnings
+    Info: Peak virtual memory: 5692 megabytes
+    Info: Processing ended: Thu Oct 15 13:17:45 2026
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/output_files/x72.fit.smsg.
+The suppressed messages can be found in C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/output_files/x72.fit.smsg.
 
 

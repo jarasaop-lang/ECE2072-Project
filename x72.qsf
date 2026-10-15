@@ -56,9 +56,6 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH proc_tb -sectio
 set_global_assignment -name EDA_TEST_BENCH_NAME components_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id components_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME components_tb -section_id components_tb
-set_global_assignment -name VERILOG_FILE proc_tb.v
-set_global_assignment -name VERILOG_FILE proc_extension_tb.v
-set_global_assignment -name VERILOG_FILE proc_extension.v
 set_location_assignment PIN_AA14 -to GPIO[12]
 set_location_assignment PIN_AA15 -to GPIO[11]
 set_location_assignment PIN_W5 -to GPIO[10]
@@ -244,14 +241,6 @@ set_location_assignment PIN_AB3 -to GPIO[32]
 set_location_assignment PIN_Y3 -to GPIO[33]
 set_location_assignment PIN_AB2 -to GPIO[34]
 set_location_assignment PIN_AA2 -to GPIO[35]
-set_global_assignment -name VERILOG_FILE BCD_tickfsm.v
-set_global_assignment -name QIP_FILE display_divide.qip
-set_global_assignment -name VERILOG_FILE display.v
-set_global_assignment -name VERILOG_FILE BCD.v
-set_global_assignment -name VERILOG_FILE simple_proc_top.v
-set_global_assignment -name VERILOG_FILE proc.v
-set_global_assignment -name VERILOG_FILE components_tb.v
-set_global_assignment -name VERILOG_FILE components.v
 set_global_assignment -name EDA_BOARD_DESIGN_TIMING_TOOL "Stamp (Timing)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT STAMP -section_id eda_board_design_timing
 set_global_assignment -name EDA_TEST_BENCH_FILE components_tb.v -section_id components_tb
@@ -262,13 +251,6 @@ set_global_assignment -name EDA_TEST_BENCH_FILE proc_tb.v -section_id proc_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE components.v -section_id proc_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE proc.v -section_id proc_tb
 # DE10-Lite electrical standards for the processor top-level ports.
-set_global_assignment -name VERILOG_FILE proc_extension_top_lvl.v
-set_global_assignment -name VERILOG_FILE proc_communication.v
-set_global_assignment -name VERILOG_FILE tick_FSM_uart.v
-set_global_assignment -name VERILOG_FILE proc_communication_top_lvl.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[*]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[*]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[*]
@@ -458,10 +440,24 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[32]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[33]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[34]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to GPIO[35]
-set_global_assignment -name VERILOG_FILE ../../UART/uart_rx.v
-set_global_assignment -name VERILOG_FILE ../../UART/uart.v
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE uart_rx.v
+set_global_assignment -name VERILOG_FILE uart.v
+set_global_assignment -name VERILOG_FILE proc_tb.v
+set_global_assignment -name VERILOG_FILE proc_extension_tb.v
+set_global_assignment -name VERILOG_FILE proc_extension.v
+set_global_assignment -name VERILOG_FILE BCD_tickfsm.v
+set_global_assignment -name QIP_FILE display_divide.qip
+set_global_assignment -name VERILOG_FILE display.v
+set_global_assignment -name VERILOG_FILE BCD.v
+set_global_assignment -name VERILOG_FILE simple_proc_top.v
+set_global_assignment -name VERILOG_FILE proc.v
+set_global_assignment -name VERILOG_FILE components_tb.v
+set_global_assignment -name VERILOG_FILE components.v
+set_global_assignment -name VERILOG_FILE proc_extension_top_lvl.v
+set_global_assignment -name VERILOG_FILE proc_communication.v
+set_global_assignment -name VERILOG_FILE tick_FSM_uart.v
+set_global_assignment -name VERILOG_FILE proc_communication_top_lvl.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
