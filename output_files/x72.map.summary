@@ -1,16 +1,20 @@
-Analysis & Elaboration Status : Successful - Thu Oct 15 21:55:59 2026
+<<<<<<< HEAD
+Analysis & Synthesis Status : Successful - Thu Oct 15 21:29:12 2026
+=======
+Analysis & Elaboration Status : Successful - Thu Oct 15 21:16:19 2026
+>>>>>>> 0a4c2dc4a3db508e6d7e66666e728dc23f58c3d2
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : x72
-Top-level Entity Name : components_tb
+Top-level Entity Name : proc_extension_tb
 Family : MAX 10
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-UFM blocks : N/A until Partition Merge
-ADC blocks : N/A until Partition Merge
+Total logic elements : 1,425
+    Total combinational functions : 1,260
+    Dedicated logic registers : 339
+Total registers : 339
+Total pins : 73
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 2
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

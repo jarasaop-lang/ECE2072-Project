@@ -1,3 +1,11 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to implement UART reciever of 16 bits.
+
+Please enter your student ID: 34977635
+
+*/
+
 // Receive bits 0 to 15 in order. Apply reset before use.
 // Update data only after all 16 bits arrive and the stop bit is high.
 module uart_rx (
