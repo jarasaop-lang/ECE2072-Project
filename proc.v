@@ -40,7 +40,7 @@ module simple_proc(clk, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, tick);
 	 assign opcode = IR_out[8:6];
 	 assign RX = IR_out[5:3];
 	 assign RY = IR_out[2:0];
-	 parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111;
+	 parameter ADD = 3'b001, SUB = 3'b011, ADDI = 3'b010, MOVI = 3'b111, DISP = 3'b000, SSI = 3'd5, MUL = 3'd4;
 	 
 	 localparam SEL_G=4'b1000, SEL_DIN=4'b1001;
 	 

@@ -29,7 +29,7 @@ module proc_tb2;
 	simple_procext testing_processor(
 		.R0(actual_registers[0]), .R1(actual_registers[1]), .R2(actual_registers[2]), .R3(actual_registers[3]), .R4(actual_registers[4]), .R5(actual_registers[5]), .R6(actual_registers[6]), .R7(actual_registers[7]),
 		.val0(bcd_registers[0]), .val1(bcd_registers[1]), .val2(bcd_registers[2]), .val3(bcd_registers[3]), .val4(bcd_registers[4]), .val5(bcd_tick),
-		.enable(enable)
+		.enable(enable),
 		.bus(bus),
 		.rst(rst),
 		.clk(clk),
