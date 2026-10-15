@@ -36,7 +36,7 @@ module proc_extension_top_lvl(
 	 
 	 
 	 assign LEDR = bus[9:0];
-	 assign HEX5 = ~hex5_inversion;
+	 assign HEX5 = {~display_value[15], ~hex5_inversion};
 	 
 endmodule 
 		 

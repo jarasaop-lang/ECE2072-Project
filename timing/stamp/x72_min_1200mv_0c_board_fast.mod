@@ -22,7 +22,7 @@ MODEL
 */
 MODEL_VERSION "1.0";
 DESIGN "x72";
-DATE "10/15/2026 13:18:01";
+DATE "10/15/2026 13:59:49";
 PROGRAM "Quartus Prime";
 
 
@@ -186,25 +186,25 @@ pos_CLOCK_50__LEDR[6]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[6] ;
 pos_CLOCK_50__LEDR[7]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[7] ;
 pos_CLOCK_50__LEDR[8]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[8] ;
 pos_CLOCK_50__LEDR[9]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[9] ;
-___4.598__delay:		DELAY  4.598 ;
-___4.459__delay:		DELAY  4.459 ;
-___4.645__delay:		DELAY  4.645 ;
-___4.650__delay:		DELAY  4.650 ;
-___4.832__delay:		DELAY  4.832 ;
-___4.363__delay:		DELAY  4.363 ;
-___5.110__delay:		DELAY  5.110 ;
-___4.807__delay:		DELAY  4.807 ;
-___5.215__delay:		DELAY  5.215 ;
-___4.441__delay:		DELAY  4.441 ;
-_6.241__6.338__delay:		DELAY 6.241 6.338 ;
-_6.234__6.262__delay:		DELAY 6.234 6.262 ;
-_6.555__6.614__delay:		DELAY 6.555 6.614 ;
-_6.356__6.403__delay:		DELAY 6.356 6.403 ;
-_6.311__6.384__delay:		DELAY 6.311 6.384 ;
-_6.266__6.305__delay:		DELAY 6.266 6.305 ;
-_6.609__6.735__delay:		DELAY 6.609 6.735 ;
-_6.164__6.193__delay:		DELAY 6.164 6.193 ;
-_6.154__6.240__delay:		DELAY 6.154 6.240 ;
-_6.154__6.171__delay:		DELAY 6.154 6.171 ;
+___4.521__delay:		DELAY  4.521 ;
+___4.382__delay:		DELAY  4.382 ;
+___4.568__delay:		DELAY  4.568 ;
+___4.572__delay:		DELAY  4.572 ;
+___4.755__delay:		DELAY  4.755 ;
+___4.286__delay:		DELAY  4.286 ;
+___5.033__delay:		DELAY  5.033 ;
+___4.729__delay:		DELAY  4.729 ;
+___5.138__delay:		DELAY  5.138 ;
+___4.364__delay:		DELAY  4.364 ;
+_6.191__6.261__delay:		DELAY 6.191 6.261 ;
+_6.184__6.185__delay:		DELAY 6.184 6.185 ;
+_6.505__6.537__delay:		DELAY 6.505 6.537 ;
+_6.306__6.325__delay:		DELAY 6.306 6.325 ;
+_6.261__6.307__delay:		DELAY 6.261 6.307 ;
+_6.216__6.228__delay:		DELAY 6.216 6.228 ;
+_6.559__6.658__delay:		DELAY 6.559 6.658 ;
+_6.114__6.115__delay:		DELAY 6.114 6.115 ;
+_6.104__6.163__delay:		DELAY 6.104 6.163 ;
+_6.104__6.094__delay:		DELAY 6.104 6.094 ;
 
 ENDMODEL

@@ -15,6 +15,8 @@ This file contains Verilog code to implement individual the CPU.
 Please enter your student ID:
 
 */
+// All registers use clk_50. The input named clk is the step button.
+// The CPU can write to R0-R6. R7 receives data even when the CPU is paused.
 module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4, R5, R6, R7, val0, val1, val2, val3, val4, val5, enable, tick, display, RXin, tx, TX_on); 
 
     // Note: The skeleton you are provided with includes output ports to output the values of the internal registers R0 - R7, for the purpose of test benching. When instantiating the processor to program your DE10-lite, you can leave these ports unused.
@@ -62,6 +64,8 @@ module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4,
 	 //Intialising the IR register components into their own wires
 	 wire [2:0] opcode, RX, RY;
 	 
+    // IR holds the instruction while din changes to an immediate value.
+    // RX and RY are register numbers. The multiplexer puts the chosen value on the bus.
 	 assign opcode = IR_out[8:6];
 	 assign RX = IR_out[5:3];
 	 assign RY = IR_out[2:0];
@@ -100,6 +104,8 @@ module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4,
 
 	
 	//Intialising the Instruction, A, G and Display registers
+    // A saves the first number while the bus carries the second number.
+    // G saves the answer, H saves the displayed number, and IR saves the instruction.
 	register_n A (
 		.data_in(bus), .r_in(Ain && cpu_step), .clk(clk_50), .Q(A_out), .rst(rst)
 	);
@@ -116,6 +122,8 @@ module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4,
 		.data_in(din), .r_in(IRin && cpu_step), .clk(clk_50), .Q(IR_out), .rst(rst)
 	);
 	
+    // Save the value to send when moving from tick 2 to tick 3.
+    // Start sending on the next clock edge, after the value has been saved.
 	register_n TX_reg (
 		.data_in(bus), .r_in(TXin && cpu_step), .clk(clk_50), .Q(TX_out), .rst(rst)
 	);
@@ -187,6 +195,8 @@ module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4,
 		 .busy(TX_on)
 	);
 		 
+    // Keep receiving data even when the CPU is paused.
+    // uart_valid goes high when a full value arrives. The receiver saves that value in R7.
 	uart_rx rx1(
 		 .clk(clk_50),
 		 .reset(rst),
@@ -199,6 +209,11 @@ module simple_proc_communication(clk, clk_50, rst, din, bus, R0, R1, R2, R3, R4,
     
     
     // TODO: define control unit:
+    // Choose which value goes on the bus and which registers should save it.
+    // Registers save their inputs on a rising clk_50 edge only when cpu_step is high.
+    // Tick 1: save the instruction. Tick 2: save numbers for the chosen instruction.
+    // Tick 3: save the ALU answer in G. Tick 4: copy G into the chosen register.
+    // Turn off all write controls first, then turn on only those needed below.
     always @(*) begin
         // TODO: Turn off all control signals:
 		  

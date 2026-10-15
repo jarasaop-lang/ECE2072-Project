@@ -22,7 +22,7 @@ MODEL
 */
 MODEL_VERSION "1.0";
 DESIGN "x72";
-DATE "10/15/2026 13:18:01";
+DATE "10/15/2026 13:59:49";
 PROGRAM "Quartus Prime";
 
 
@@ -186,25 +186,25 @@ pos_CLOCK_50__LEDR[6]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[6] ;
 pos_CLOCK_50__LEDR[7]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[7] ;
 pos_CLOCK_50__LEDR[8]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[8] ;
 pos_CLOCK_50__LEDR[9]__delay:		DELAY (POSEDGE) CLOCK_50 LEDR[9] ;
-___8.191__delay:		DELAY  8.191 ;
-___7.952__delay:		DELAY  7.952 ;
-___8.304__delay:		DELAY  8.304 ;
-___8.287__delay:		DELAY  8.287 ;
-___8.615__delay:		DELAY  8.615 ;
-___7.821__delay:		DELAY  7.821 ;
-___9.155__delay:		DELAY  9.155 ;
-___8.616__delay:		DELAY  8.616 ;
-___9.336__delay:		DELAY  9.336 ;
-___7.944__delay:		DELAY  7.944 ;
-_12.099__11.833__delay:		DELAY 12.099 11.833 ;
-_11.932__11.747__delay:		DELAY 11.932 11.747 ;
-_12.589__12.356__delay:		DELAY 12.589 12.356 ;
-_12.226__12.034__delay:		DELAY 12.226 12.034 ;
-_12.122__11.919__delay:		DELAY 12.122 11.919 ;
-_12.160__11.903__delay:		DELAY 12.160 11.903 ;
-_12.953__12.495__delay:		DELAY 12.953 12.495 ;
-_11.882__11.661__delay:		DELAY 11.882 11.661 ;
-_11.917__11.627__delay:		DELAY 11.917 11.627 ;
-_11.779__11.586__delay:		DELAY 11.779 11.586 ;
+___8.172__delay:		DELAY  8.172 ;
+___7.933__delay:		DELAY  7.933 ;
+___8.285__delay:		DELAY  8.285 ;
+___8.268__delay:		DELAY  8.268 ;
+___8.596__delay:		DELAY  8.596 ;
+___7.802__delay:		DELAY  7.802 ;
+___9.136__delay:		DELAY  9.136 ;
+___8.597__delay:		DELAY  8.597 ;
+___9.317__delay:		DELAY  9.317 ;
+___7.925__delay:		DELAY  7.925 ;
+_12.083__11.814__delay:		DELAY 12.083 11.814 ;
+_11.915__11.728__delay:		DELAY 11.915 11.728 ;
+_12.573__12.337__delay:		DELAY 12.573 12.337 ;
+_12.209__12.015__delay:		DELAY 12.209 12.015 ;
+_12.106__11.900__delay:		DELAY 12.106 11.900 ;
+_12.143__11.884__delay:		DELAY 12.143 11.884 ;
+_12.936__12.476__delay:		DELAY 12.936 12.476 ;
+_11.865__11.642__delay:		DELAY 11.865 11.642 ;
+_11.900__11.608__delay:		DELAY 11.900 11.608 ;
+_11.763__11.567__delay:		DELAY 11.763 11.567 ;
 
 ENDMODEL
