@@ -1,3 +1,11 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to implement UART transmission of 16 bits.
+
+Please enter your student ID: 34977635
+
+*/
+
 // Send a low start bit, then bits 0 to 15, then a high stop bit. Stay high when idle.
 // With a 50 MHz input and 5000 clocks per bit, the bit rate is 10000 bits/s.
 // Apply reset before use. start is accepted only while busy is low.

@@ -323,4 +323,3 @@ module proc_tb2;
 
 endmodule
 
-endmodule

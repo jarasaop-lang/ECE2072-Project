@@ -1,3 +1,10 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to decode a 4 bit input to display a 7 segment single digit display.
+
+Please enter your student ID: 34977635
+
+*/
 module BCD (
     input [3:0] data,
 	 input neg,

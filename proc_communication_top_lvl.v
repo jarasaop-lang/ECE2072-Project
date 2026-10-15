@@ -1,10 +1,20 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to instantiate the UART communication extended version of CPU.
+
+Please enter your student ID: 34977635
+
+*/
+
+
 // Board wiring: KEY0 resets, KEY1 steps, SW9 enables, and SW8:0 supply instruction/data.
 // GPIO[1] transmits and GPIO[0] receives; both UART modules use CLOCK_50.
 module proc_communication_top_lvl(
 	 input [9:0] SW,
 	 input [1:0] KEY,
 	 input CLOCK_50,
-	 inout [1:0] GPIO,
+	 input RX,
+	 output TX,
 	 output [9:0] LEDR,
 	 output [7:0] HEX5,
 	 output [7:0] HEX4,
@@ -37,8 +47,8 @@ module proc_communication_top_lvl(
 		 .din(sw_sync[8:0]),
 		 .bus(bus),
 		 .clk_50(CLOCK_50),
-		 .RXin(GPIO[0]),
-		 .tx(GPIO[1]),
+		 .RXin(RX),
+		 .tx(TX),
         .display(display_value),
 		 .clk(~KEY[1]),
 		 .rst(reset_sync),

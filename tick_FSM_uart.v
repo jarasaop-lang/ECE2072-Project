@@ -1,3 +1,12 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to implement UART communication to the extended version of CPU.
+
+Please enter your student ID: 34977635
+
+*/
+
+
 // clk is an active-high button level (~KEY[1]), not a clock.
 // At 50 MHz, 500000 stable samples debounce the button for 10 ms.
 module tick_FSM_uart #(

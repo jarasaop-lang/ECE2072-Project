@@ -1,18 +1,8 @@
 /*
 Monash University ECE2072: Assignment 
-This file contains Verilog code to implement the extended version of CPU.
+This file contains Verilog code to implement UART communication to the extended version of CPU.
 
-Please enter your student ID:
-
-
-*/
- // TODO: Copy and paste your task 2 into here
-
-/*
-Monash University ECE2072: Assignment 
-This file contains Verilog code to implement individual the CPU.
-
-Please enter your student ID:
+Please enter your student ID: 34977635
 
 */
 // All registers use clk_50. The input named clk is the step button.

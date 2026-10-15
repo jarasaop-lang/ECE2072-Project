@@ -1,3 +1,11 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to decode a 16 bit input to 5 digit 7 segment display.
+
+Please enter your student ID: 34977635
+
+*/
+
 // Find the size of the number without its sign, then split it into five decimal digits.
 // Turn on the decimal points for negative numbers by driving them low.
 module display(H_out, val0, val1, val2, val3, val4);

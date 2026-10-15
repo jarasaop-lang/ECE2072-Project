@@ -1,3 +1,11 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains Verilog code to instantiate the simple version of the CPU.
+
+Please enter your student ID: 34977635
+
+*/
+
 module simple_proc_top(
 	 input [8:0] SW,
 	 input [1:0] KEY,

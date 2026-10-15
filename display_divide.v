@@ -1,3 +1,12 @@
+/*
+Monash University ECE2072: Assignment 
+This file contains an IP block that divides two values/inputs and outputs a quotient and remainder.
+
+Please enter your student ID: 34977635
+
+*/
+
+
 // megafunction wizard: %LPM_DIVIDE%
 // GENERATION: STANDARD
 // VERSION: WM1.0
