@@ -4,7 +4,7 @@ module proc_communication_top_lvl(
 	 input [9:0] SW,
 	 input [1:0] KEY,
 	 input CLOCK_50,
-	 inout [1:0] GPIO,
+	 inout [1:0] GPIO, 
 	 output [9:0] LEDR,
 	 output [7:0] HEX5,
 	 output [7:0] HEX4,

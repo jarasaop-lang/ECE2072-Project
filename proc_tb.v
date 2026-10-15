@@ -3,7 +3,7 @@
 Monash University ECE2072: Assignment 
 This file contains a Verilog test bench to test the correctness of the processor.
 
-Please enter your student ID:
+Please enter your student ID: 36138568
 
 */
 // Change test inputs on falling clock edges. Check results after rising clock edges.
