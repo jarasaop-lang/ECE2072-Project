@@ -7,4 +7,138 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/tcolo/Downloads/2072quartus/x72/ECE2072-Project/simulation/modelsim
+Z0 dC:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/simulation/modelsim
+vALU
+Z1 !s110 1792117584
+!i10b 1
+!s100 c2oc>?m:Tio;of9P;a0`i3
+I?E`CCEkozbWXfW?ZR4B>b0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1792048084
+Z4 8C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v
+Z5 FC:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v
+L0 99
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1792117584.000000
+Z8 !s107 C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project|C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components.v|
+!i113 1
+Z10 o-vlog01compat -work work
+Z11 !s92 -vlog01compat -work work {+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project}
+Z12 tCvgOpt 0
+n@a@l@u
+vcomponents_tb
+R1
+!i10b 1
+!s100 nUS<ZVITNjDQj0OdShB0i0
+IXP0=TQbGH^hbIJKNKkMHM1
+R2
+R0
+w1792117215
+8C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v
+FC:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v
+L0 12
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project|C:/Users/AND0036/OneDrive - Department of Education/Desktop/University/Year 2 Semester 1/ECE2071/ECE2072-Project/components_tb.v|
+!i113 1
+R10
+R11
+R12
+vmultiplexer
+R1
+!i10b 1
+!s100 KAc9DF1ikd>^0U4=XZ34D3
+ID]FEQo2^P]ibJTN9X9XFS3
+R2
+R0
+R3
+R4
+R5
+L0 54
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vregister_n
+R1
+!i10b 1
+!s100 4i0b70o4S>K`_D[NhP?U<0
+I6JXOXo3zGIDDY??7eVK[W1
+R2
+R0
+R3
+R4
+R5
+L0 196
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vsign_extend
+R1
+!i10b 1
+!s100 S7cMMhaPgK]^L3T3jC@Eo0
+IX@4TQJUHB<b6h?BgD<d?k2
+R2
+R0
+R3
+R4
+R5
+L0 9
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+vtick_FSM
+R1
+!i10b 1
+!s100 d3eMe7i;4kVkbi;Q33gjU0
+IcihT[@UY:co5?^M4`5=WD3
+R2
+R0
+R3
+R4
+R5
+L0 25
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+R12
+ntick_@f@s@m

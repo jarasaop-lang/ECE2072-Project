@@ -23,7 +23,7 @@ module components_tb;
 	wire [3:0] tick;
 	reg [3:0] val_en, val_rst, tick_exp;
 	integer i, j, k;
-	parameter T1 =1, T2=2, T3=4, T4=8;
+	parameter T1 = 4'b0001, T2= 4'b0010, T3= 4'b0100, T4= 4'b1000;
 	integer err_tick;
 	
 	//Multiplexer
@@ -35,7 +35,7 @@ module components_tb;
 	//Register
 	parameter NR = 16, NIR = 9;
 	
-	reg [2:0] control_bits; //First bit = rst, second = r_in
+	reg reg_rst, reg_rin; //First bit = rst, second = r_in
 	
 	reg [NR-1:0] data_in_16;
 	wire [NR-1:0] Q_16;
@@ -85,22 +85,23 @@ module components_tb;
 		
 	);
 	
-	
+	// synopsys translate_off
 	register_n#(.N(NR)) register_16 (
 		.data_in(data_in_16),
-		.r_in(control_bits[0]),
+		.r_in(reg_rin),
 		.clk(clk),
 		.Q(Q_16),
-		.rst((control_bits[1]))
+		.rst(reg_rst)
 	);
 	
 	register_n#(.N(NIR)) register_9 (
 		.data_in(data_in_9),
-		.r_in(control_bits[0]),
+		.r_in(reg_rin),
 		.clk(clk),
 		.Q(Q_9),
-		.rst((control_bits[1]))
+		.rst(reg_rst)
 	);
+	// synopsys translate_on
 	
 	
 	
@@ -147,14 +148,15 @@ resulting in 1024 individual clock-cycle checks.
 			 exp = $signed(in);
 
 			 if (exp !== ext) begin
+					 // synopsys translate_off
 			       $display("[FAIL] Sign Extender | Test %0d | Input: %b | Expected: %b | Actual: %b | Time: %0t ns",
                          cnt_sign + 1, in, exp, ext, $time);
-				
+					 // synopsys translate_on
 					 err_sign = err_sign + 1;
 			 end
 
 			 #1;
-			 in = in + 1;
+			 in = in + 9'd1;
 		 end
 
 		 if (err_sign == 0) begin
@@ -179,10 +181,10 @@ resulting in 1024 individual clock-cycle checks.
 		 st[TICK_STOP] = 0;
 		 
 		 for(i=0; i< 16; i = i+1) begin
-			 val_en = i;
+			 val_en = i[3:0];
 			 
 			 for(j= 0; j<16; j=j+1) begin
-				 val_rst = j;
+				 val_rst = j[3:0];
 				 rst = 1;
 				 enable = 0;
 				 @(posedge clk);
@@ -218,9 +220,11 @@ resulting in 1024 individual clock-cycle checks.
 			
 					if(tick_exp !== tick) begin
 						err_tick = err_tick+1;
+						// synopsys translate_off
 						$display("FAIL Tick FSM | Test Sequence %0d | Clock Cycle %0d | Enable seq: %b | Rst seq: %b | EN: %b | RST: %b | Expected: %b | Actual: %b | Time: %0t ns",
 									(i*16)+j+1, k+1, val_en, val_rst,
 									enable, rst, tick_exp, tick, $time);
+						// synopsys translate_on
 					end
 				end 
 			end
@@ -253,6 +257,8 @@ resulting in 1024 individual clock-cycle checks.
 		 
         // Try every pair of signed nine-bit numbers with all eight operation codes.
         // This does not test every possible pair of 16-bit numbers.
+		  
+		 // synopsys translate_off
 		 for(alu = 0; alu<2097152; alu = alu+1) begin
 		 
 			 in_a = {{7{alu[8]}}, {alu[8:0]}};
@@ -269,11 +275,16 @@ resulting in 1024 individual clock-cycle checks.
 					 3'b010: alu_exp = in_a - in_b;
 					 
 					 3'b011: 
-								if(in_a[15]) alu_exp = in_b >> $signed(in_a)*-1;
-								else alu_exp = in_b << $signed(in_a);
+								if(in_a[15]) begin 
+								alu_exp = in_b >> $signed(in_a)*-1;
+								end 
+								else begin
+								alu_exp = in_b << $signed(in_a);
+								end
 								
 					 default: alu_exp = 16'b0;
 				 endcase
+			 
 			 #9;
 			 
 			 if (alu_exp !== alu_out) begin
@@ -282,6 +293,8 @@ resulting in 1024 individual clock-cycle checks.
                      $display("FAIL ALU: op=%0d a=%h b=%h expected=%h actual=%h", alu_c, in_a, in_b, alu_exp, alu_out);
              end
          end
+			// synopsys translate_on
+			
          $display("ALU summary: 2097152 cases, %0d errors", alu_err);
          st[ALU_STOP] = 1'b1;
 	end 
@@ -317,7 +330,7 @@ resulting in 1024 individual clock-cycle checks.
 		  //initialising the multiplexer values
 		  for (mi = 0; mi < 10; mi = mi + 1) begin
 				//get random, legal, values by multiplying a 16 bit hex value
-				registers[mi] = (mi+1) * 16'h1111;	
+				registers[mi] = (mi[15:0]+16'd1) * 16'h1111;	
 		  end
 		  
     
@@ -388,28 +401,28 @@ resulting in 1024 individual clock-cycle checks.
 		  
 		
 			
-		  control_bits = 2'b10;
+		  {reg_rst, reg_rin} = 2'b10;
 		  //skips from t=0 --> t=11-15 period (negative edge)
 		  @(posedge clk);
 		  #1;
-		  control_bits = 2'b00;
+		  {reg_rst, reg_rin} = 2'b00;
 		 
 		
-	
+		  // synopsys translate_off
 		  for(ri =0; ri < 4; ri = ri + 1) begin
 		  
 				@(negedge clk);
-				control_bits = ri[1:0];
-				data_in_16 = 16'h11EB + ri;
-				data_in_9 = 9'h0E1 + ri;
+				{reg_rst, reg_rin} = ri[1:0];
+				data_in_16 = 16'h11EB + ri[15:0];
+				data_in_9 = 9'h0E1 + ri[8:0];
 				
 				
-				if (control_bits[1]) begin
+				if (reg_rst) begin
 					expected_16 = 16'b0;
 					expected_9 = 9'b0;
 				
 				end
-				else if (control_bits[0]) begin
+				else if (reg_rin) begin
 					expected_16 = data_in_16;
 					expected_9 = data_in_9;
 				end
@@ -423,27 +436,32 @@ resulting in 1024 individual clock-cycle checks.
 				
 				//register 16 checks
 				if (expected_16 === Q_16) begin
-					$display("Pass R16: rst = %b, r_in = %b: Register16 Expected = %b, Q_16 = %b", control_bits[1], control_bits[0], expected_16, Q_16);
+					$display("Pass R16: rst = %b, r_in = %b: Register16 Expected = %b, Q_16 = %b", reg_rst, reg_rin, expected_16, Q_16);
 					r16_pass = r16_pass + 1;
 				end
 				
 				else if (expected_16 !== Q_16) begin
-					$display("Fail R16: rst = %b, r_in = %b: Register16 Expected = %b, Q_16 = %b, count failed: %d, Time failed: %d", control_bits[1], control_bits[0], expected_16, Q_16, ri + 1, $time);
+
+					$display("Fail R16: rst = %b, r_in = %b: Register16 Expected = %b, Q_16 = %b, count failed: %d, Time failed: %d", reg_rst, reg_rin, expected_16, Q_16, ri + 1, $time);
+
 					r16_error = r16_error + 1;
 				end
 				
 				//register 9/IR checks
 				if (expected_9 === Q_9) begin
-					$display("Pass R9: rst = %b, r_in = %b: Register9 Expected = %b, Q_9 = %b, ", control_bits[1], control_bits[0], expected_9, Q_9);
+					$display("Pass R9: rst = %b, r_in = %b: Register9 Expected = %b, Q_9 = %b, ", reg_rst, reg_rin, expected_9, Q_9);
 					r9_pass = r9_pass + 1;
 				end
 				
 				else if (expected_9 !== Q_9) begin
-					$display("Fail R9: rst = %b, r_in = %b: Register9 Expected = %b, Q_9 = %b, count failed: %d, Time failed: %d", control_bits[1], control_bits[0], expected_9, Q_9, ri + 1, $time);
+
+					$display("Fail R9: rst = %b, r_in = %b: Register9 Expected = %b, Q_9 = %b, count failed: %d, Time failed: %d", reg_rst, reg_rin, expected_9, Q_9, ri + 1, $time);
+
 					r9_error = r9_error + 1;
 				end
 		  
 		  end
+		  // synopsys translate_on
 		  
 				if (r9_error == 0 & r16_error == 0) begin
 					$display("Success. No errors were detected in the Register Component");
@@ -460,25 +478,16 @@ resulting in 1024 individual clock-cycle checks.
 	 
 	 initial begin
 		 
-
+		 // synopsys translate_off
 		 wait(st == 5'b11111);
+		 // synopsys translate_on 
 
 		 $display("All tests finished: sign=%0d tick=%0d alu=%0d mux=%0d reg9=%0d reg16=%0d errors",
              err_sign, err_tick, alu_err, mult_errors, r9_error, r16_error);
 		 $stop;
+		 
 	 end
 
 
 		
-		
-
-		
-	 
-	
-							
-						
-
-				 
-	
-		 
 endmodule
