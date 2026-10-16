@@ -112,7 +112,7 @@ module proc_extension_tb;
 			
 			for (type_1_i = 0; type_1_i < 8; type_1_i = type_1_i + 1) begin
 				if (expected_registers[type_1_i] !== actual_registers[type_1_i]) begin
-					$display("Fail Type 1: opcode = %d, RY = %d: Selected RX Register: %d Register Expected = %b, Register Actual = %b", opcode, ry, rx, expected_registers[type_1_i], actual_registers[type_1_i] );
+					$display("Fail Type 1: opcode = %d, RY = %d: Selected RX Register: %d, Wrong Register: %d, Register Expected = %b, Register Actual = %b", opcode, ry, rx, type_1_i, expected_registers[type_1_i], actual_registers[type_1_i] );
 					fail_count = fail_count + 1;	
 				end
 					
@@ -211,14 +211,14 @@ module proc_extension_tb;
 			//register checks --> cycle through all the registers 
 			for (type_2_i = 0; type_2_i < 8; type_2_i = type_2_i + 1) begin
 				if (expected_registers[type_2_i] !== actual_registers[type_2_i]) begin
-					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+					$display("Fail Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, type_2_i, expected_registers[type_2_i], actual_registers[type_2_i]);
 					fail_count = fail_count + 1;
 				end
 					
 				else begin
 					//only Accept pass messages for edge cases
 					if (accept_pass_messages) begin
-						$display("Pass Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, rx, expected_registers[type_2_i], actual_registers[type_2_i]);
+						$display("Pass Type 2: opcode = %d, immediate = %d: Selected Register: %d Register Expected = %b, Register Actual = %b", opcode, immediate, type_2_i, expected_registers[type_2_i], actual_registers[type_2_i]);
 					end
 					pass_count = pass_count + 1;
 				end			
@@ -283,7 +283,7 @@ module proc_extension_tb;
 			
 			//Testing a single wrap around instance (FFFF to 0000)
 			type_2_instructions(MOVI, R4, 9'h1FF);
-			type_2_instructions(MOVI, R4, 9'd1);
+			type_2_instructions(ADDI, R4, 9'd1);
 			
 
 			//final test for sweeps --> checking if Rin works for each register --> each value is checked against all registers to ensure it's working
