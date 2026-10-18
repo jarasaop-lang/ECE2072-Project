@@ -241,11 +241,11 @@ resulting in 1024 individual clock-cycle checks.
 			end
 		end
 			if(err_tick == 0 ) begin
-				$display("success");
+				$display("TICK FSM Passed with 0 Errors");
 				st[TICK_STOP] = 1;
 			end
 			else begin
-				 $display("Fail had %0d errors", err_tick);		
+				 $display("Tick FSM Failed: %0d errors", err_tick);		
 				 st[TICK_STOP] = 1;
 			end 
 
