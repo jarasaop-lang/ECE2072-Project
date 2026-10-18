@@ -8,7 +8,7 @@ Please enter your student ID: 34977635
 
 
 // Board wiring: KEY0 resets, KEY1 steps, SW9 enables, and SW8:0 supply instruction/data.
-// GPIO[1] transmits and GPIO[0] receives; both UART modules use CLOCK_50.
+// TX (GPIO_1) transmits and RX (GPIO_0) receives; both UART modules use CLOCK_50.
 module proc_communication_top_lvl(
 	 input [9:0] SW,
 	 input [1:0] KEY,

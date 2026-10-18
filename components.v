@@ -2,8 +2,17 @@
 Monash University ECE2072: Assignment 
 This file contains Verilog code to implement individual components to be used in 
     the CPU.
+	 
+	 ALU, Tick_FSM and Sign_Extender
+	 
+	 Were completed by: Tevin Colomba Mudalige 
+	 Student ID: 34977635
+	 
+	 Multiplexer and Register
+	 
+	 Were completed by: Robert Anderson
+	 Student ID: 36138568
 
-Please enter your name and student ID:
 
 */
 module sign_extend(in, ext);
@@ -98,7 +107,7 @@ endmodule
 // Negative amounts shift right and fill with zeros. Shifting 16 or more places gives zero.
 module ALU (input_a, input_b, alu_op, result);
 	/* 
-	 * This module implements the arithmetic logic unit of the processor.
+	 * This module implements the arithmetic logic unit of the processor.5
 	  */
 	// TODO: declare inputs and outputs
 

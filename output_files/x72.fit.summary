@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu Oct 15 21:29:26 2026
+Fitter Status : Successful - Sat Oct 17 17:33:10 2026
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : x72
 Top-level Entity Name : proc_communication_top_lvl
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 1,324 / 49,760 ( 3 % )
+Total logic elements : 1,328 / 49,760 ( 3 % )
     Total combinational functions : 1,261 / 49,760 ( 3 % )
     Dedicated logic registers : 339 / 49,760 ( < 1 % )
 Total registers : 339

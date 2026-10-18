@@ -3,8 +3,19 @@
 Monash University ECE2072: Assignment 
 This file contains a Verilog test bench to test the correctness of the individual 
     components used in the processor.
-
-Please enter your student ID:
+	 
+	 ALU, Tick_FSM and Sign_Extender
+	 
+	 Were completed by: Tevin Colomba Mudalige 
+	 Student ID: 34977635
+	 
+	 Multiplexer and Register
+	 
+	 Were completed by: Robert Anderson
+	 Student ID: 36138568
+	 	 
+	 
+	 
 
 */
 // Each test uses the same clock and sets its own flag when finished.
